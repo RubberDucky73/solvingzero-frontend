@@ -1,0 +1,131 @@
+{
+    "companies": [
+      {
+        "id": 1,
+        "name": "Diamond Energy",
+        "image": "/CompanyLogos/Diamond.png",
+        "green": "Greenest",
+        "price": "Average Prices",
+        "app": false,
+        "aus": true
+      },
+      {
+        "id": 2,
+        "name": "Origin Energy",
+        "image": "/CompanyLogos/Origin.png",
+        "green": "Polluter",
+        "price": "Average Prices",
+        "app": true,
+        "aus": true
+      },
+      {
+        "id": 3,
+        "name": "Energy Locals",
+        "image": "/CompanyLogos/EnergyLocals.png",
+        "green": "Green",
+        "price": "Good Prices",
+        "app": false,
+        "aus": true
+      },
+      {
+        "id": 4,
+        "name": "AGL",
+        "image": "/CompanyLogos/AGL.png",
+        "green": "Polluter",
+        "price": "Average Prices",
+        "app": true,
+        "aus": true
+      },
+      {
+        "id": 5,
+        "name": "Momentum",
+        "image": "/CompanyLogos/Momentum.png",
+        "green": "Green",
+        "price": "Average Prices",
+        "app": false,
+        "aus": true
+      },
+      {
+        "id": 6,
+        "name": "Nectr",
+        "image": "/CompanyLogos/Nectr.png",
+        "green": "Green",
+        "price": "Good Prices",
+        "app": true,
+        "aus": false
+      },
+      {
+        "id": 7,
+        "name": "Amber Electric",
+        "image": "/CompanyLogos/Amber.png",
+        "green": "Green",
+        "price": "Expensive",
+        "app": true,
+        "aus": true
+      },
+      {
+        "id": 8,
+        "name": "Energy Australia",
+        "image": "/CompanyLogos/EnergyAus.png",
+        "green": "Polluter",
+        "price": "Average Prices",
+        "app": true,
+        "aus": true
+      },
+      {
+        "id": 9,
+        "name": "Sumo Power",
+        "image": "/CompanyLogos/Sumo.png",
+        "green": "Polluter",
+        "price": "Great Prices",
+        "app": false,
+        "aus": true
+      },
+      {
+        "id": 10,
+        "name": "Red Energy",
+        "image": "/CompanyLogos/Red.png",
+        "green": "Green",
+        "price": "Average Prices",
+        "app": false,
+        "aus": true
+      },
+      {
+        "id": 11,
+        "name": "Powershop",
+        "image": "/CompanyLogos/Powershop.png",
+        "green": "Green",
+        "price": "Good Prices",
+        "app": true,
+        "aus": false
+      },
+      {
+        "id": 12,
+        "name": "Aurora",
+        "image": "/CompanyLogos/Aurora.png",
+        "green": "Green",
+        "price": "Average Prices",
+        "app": true,
+        "aus": true
+      },
+      {
+        "id": 13,
+        "name": "Dodo",
+        "image": "/CompanyLogos/Dodo.png",
+        "green": "Polluter",
+        "price": "Good Prices",
+        "app": false,
+        "aus": true
+      },
+      {
+        "id": 14,
+        "name": "Tango",
+        "image": "/CompanyLogos/Tango.png",
+        "green": "Green",
+        "price": "Average Prices",
+        "app": false,
+        "aus": false
+      }
+    ]
+  }
+  

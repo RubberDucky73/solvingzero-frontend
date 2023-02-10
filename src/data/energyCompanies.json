@@ -1,0 +1,304 @@
+{
+  "companies": [
+    {
+      "id": 1,
+      "value": "Moving",
+      "display": "I am moving"
+    },
+    {
+      "id": 2,
+      "value": "1st",
+      "display": "1st Energy"
+    },
+    {
+      "id": 3,
+      "value": "ActewAGL",
+      "display": "Actew AGL"
+    },
+    {
+      "id": 4,
+      "value": "Alinta",
+      "display": "Alinta Energy"
+    },
+    {
+      "id": 5,
+      "value": "Amber",
+      "display": "Amber Electric"
+    },
+    {
+      "id": 6,
+      "value": "Arc",
+      "display": "Arc Energy"
+    },
+    {
+      "id": 7,
+      "value": "ArclineRACV",
+      "display": "Arcline by RACV"
+    },
+    {
+      "id": 8,
+      "value": "Aurora",
+      "display": "Aurora Energy"
+    },
+    {
+      "id": 9,
+      "value": "BlueNRG",
+      "display": "Blue NRG"
+    },
+    {
+      "id": 10,
+      "value": "BrightSpark",
+      "display": "Bright Spark Power"
+    },
+    {
+      "id": 11,
+      "value": "Brighte",
+      "display": "Brighte"
+    },
+    {
+      "id": 12,
+      "value": "Circular",
+      "display": "Circular Energy"
+    },
+    {
+      "id": 13,
+      "value": "CovaU",
+      "display": "CovaU"
+    },
+    {
+      "id": 14,
+      "value": "Diamond",
+      "display": "Diamond Energy"
+    },
+    {
+      "id": 15,
+      "value": "Discover",
+      "display": "Discover Energy"
+    },
+    {
+      "id": 16,
+      "value": "Dodo",
+      "display": "Dodo Energy"
+    },
+    {
+      "id": 17,
+      "value": "ElectricityBox",
+      "display": "Electricity in a box"
+    },
+    {
+      "id": 18,
+      "value": "Elysian",
+      "display": "Elysian Energy"
+    },
+    {
+      "id": 19,
+      "value": "EnergyAustralia",
+      "display": "Energy Australia"
+    },
+    {
+      "id": 20,
+      "value": "EnergyLocals",
+      "display": "Energy Locals"
+    },
+    {
+      "id": 21,
+      "value": "Enova",
+      "display": "Enova Energy"
+    },
+    {
+      "id": 22,
+      "value": "Ergon",
+      "display": "Ergon Energy"
+    },
+    {
+      "id": 23,
+      "value": "Esperance",
+      "display": "Esperance"
+    },
+    {
+      "id": 24,
+      "value": "FutureXPower",
+      "display": "Future X Power"
+    },
+    {
+      "id": 25,
+      "value": "Gee",
+      "display": "Gee Energy"
+    },
+    {
+      "id": 26,
+      "value": "GloBird",
+      "display": "Glo Bird"
+    },
+    {
+      "id": 27,
+      "value": "GlowPower",
+      "display": "Glow Power"
+    },
+    {
+      "id": 28,
+      "value": "HorizonPower",
+      "display": "Horizon Power"
+    },
+    {
+      "id": 29,
+      "value": "IndigoPower",
+      "display": "Indigo Power"
+    },
+    {
+      "id": 30,
+      "value": "iO",
+      "display": "iO Energy"
+    },
+    {
+      "id": 31,
+      "value": "Jacana",
+      "display": "Jacana Energy"
+    },
+    {
+      "id": 32,
+      "value": "Kleenheat",
+      "display": "Kleenheat"
+    },
+    {
+      "id": 33,
+      "value": "Kogan",
+      "display": "Kogan Energy"
+    },
+    {
+      "id": 34,
+      "value": "LPE",
+      "display": "LPE"
+    },
+    {
+      "id": 35,
+      "value": "Lumo",
+      "display": "Lumo Energy"
+    },
+    {
+      "id": 36,
+      "value": "Mojo",
+      "display": "Mojo Power"
+    },
+    {
+      "id": 37,
+      "value": "Momentum",
+      "display": "Momentum Energy"
+    },
+    {
+      "id": 38,
+      "value": "Nectr",
+      "display": "Nectr"
+    },
+    {
+      "id": 39,
+      "value": "Next",
+      "display": "Next Business Energy"
+    },
+    {
+      "id": 40,
+      "value": "On",
+      "display": "On by Energy Australia"
+    },
+    {
+      "id": 41,
+      "value": "Origin",
+      "display": "Origin Energy"
+    },
+    {
+      "id": 42,
+      "value": "Ovo",
+      "display": "Ovo Energy"
+    },
+    {
+      "id": 43,
+      "value": "People",
+      "display": "People Energy"
+    },
+    {
+      "id": 44,
+      "value": "Powerclub",
+      "display": "Powerclub"
+    },
+    {
+      "id": 45,
+      "value": "Powerdirect",
+      "display": "Powerdirect"
+    },
+    {
+      "id": 46,
+      "value": "Powershop",
+      "display": "Powershop"
+    },
+    {
+      "id": 47,
+      "value": "Q",
+      "display": "Q Energy"
+    },
+    {
+      "id": 48,
+      "value": "Radian",
+      "display": "Radian Energy"
+    },
+    {
+      "id": 49,
+      "value": "ReAmped",
+      "display": "ReAmped Energy"
+    },
+    {
+      "id": 50,
+      "value": "Red",
+      "display": "Red Energy"
+    },
+    {
+      "id": 51,
+      "value": "Rimfire",
+      "display": "Rimfire Energy"
+    },
+    {
+      "id": 52,
+      "value": "Simply",
+      "display": "Simply Energy"
+    },
+    {
+      "id": 53,
+      "value": "Smart",
+      "display": "Smart Energy"
+    },
+    {
+      "id": 54,
+      "value": "Social",
+      "display": "Social Energy"
+    },
+    {
+      "id": 55,
+      "value": "Sonnen",
+      "display": "Sonnen"
+    },
+    {
+      "id": 56,
+      "value": "Sumo",
+      "display": "Sumo"
+    },
+    {
+      "id": 57,
+      "value": "Synergy",
+      "display": "Synergy"
+    },
+    {
+      "id": 58,
+      "value": "Tango",
+      "display": "Tango Energy"
+    },
+    {
+      "id": 59,
+      "value": "Telstra",
+      "display": "Telstra Energy"
+    },
+    {
+      "id": 60,
+      "value": "Zen",
+      "display": "Zen Power"
+    }
+  ]
+}
