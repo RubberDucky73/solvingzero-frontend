@@ -5,7 +5,7 @@
         "name": "Diamond Energy",
         "image": "/CompanyLogos/Diamond.png",
         "green": "Greenest",
-        "price": "Average Prices",
+        "price": "Average Price",
         "app": false,
         "aus": true
       },
@@ -14,7 +14,7 @@
         "name": "Origin Energy",
         "image": "/CompanyLogos/Origin.png",
         "green": "Polluter",
-        "price": "Average Prices",
+        "price": "Average Price",
         "app": true,
         "aus": true
       },
@@ -23,7 +23,7 @@
         "name": "Energy Locals",
         "image": "/CompanyLogos/EnergyLocals.png",
         "green": "Green",
-        "price": "Good Prices",
+        "price": "Good Price",
         "app": false,
         "aus": true
       },
@@ -32,7 +32,7 @@
         "name": "AGL",
         "image": "/CompanyLogos/AGL.png",
         "green": "Polluter",
-        "price": "Average Prices",
+        "price": "Average Price",
         "app": true,
         "aus": true
       },
@@ -41,7 +41,7 @@
         "name": "Momentum",
         "image": "/CompanyLogos/Momentum.png",
         "green": "Green",
-        "price": "Average Prices",
+        "price": "Average Price",
         "app": false,
         "aus": true
       },
@@ -50,7 +50,7 @@
         "name": "Nectr",
         "image": "/CompanyLogos/Nectr.png",
         "green": "Green",
-        "price": "Good Prices",
+        "price": "Good Price",
         "app": true,
         "aus": false
       },
@@ -68,7 +68,7 @@
         "name": "Energy Australia",
         "image": "/CompanyLogos/EnergyAus.png",
         "green": "Polluter",
-        "price": "Average Prices",
+        "price": "Average Price",
         "app": true,
         "aus": true
       },
@@ -77,7 +77,7 @@
         "name": "Sumo Power",
         "image": "/CompanyLogos/Sumo.png",
         "green": "Polluter",
-        "price": "Great Prices",
+        "price": "Great Price",
         "app": false,
         "aus": true
       },
@@ -86,7 +86,7 @@
         "name": "Red Energy",
         "image": "/CompanyLogos/Red.png",
         "green": "Green",
-        "price": "Average Prices",
+        "price": "Average Price",
         "app": false,
         "aus": true
       },
@@ -95,7 +95,7 @@
         "name": "Powershop",
         "image": "/CompanyLogos/Powershop.png",
         "green": "Green",
-        "price": "Good Prices",
+        "price": "Good Price",
         "app": true,
         "aus": false
       },
@@ -104,7 +104,7 @@
         "name": "Aurora",
         "image": "/CompanyLogos/Aurora.png",
         "green": "Green",
-        "price": "Average Prices",
+        "price": "Average Price",
         "app": true,
         "aus": true
       },
@@ -113,7 +113,7 @@
         "name": "Dodo",
         "image": "/CompanyLogos/Dodo.png",
         "green": "Polluter",
-        "price": "Good Prices",
+        "price": "Good Price",
         "app": false,
         "aus": true
       },
@@ -122,7 +122,7 @@
         "name": "Tango",
         "image": "/CompanyLogos/Tango.png",
         "green": "Green",
-        "price": "Average Prices",
+        "price": "Average Price",
         "app": false,
         "aus": false
       }

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { collectionGroup, getDocs, where, query } from 'firebase/firestore';
-import { Grid, GridItem } from '@chakra-ui/react';
+import { Flex, Grid, GridItem, CircularProgress } from '@chakra-ui/react';
 import { db } from '../firebase/config';
 import PostcodeSearch from './PostcodeSearch';
 
@@ -10,14 +10,14 @@ export default function BestPlans({ postcode }) {
 
   const renderList = () => {
     if (bestPlansState?.length && !loading) {
-      return bestPlansState?.map((ele, idx) => (
+      return bestPlansState?.map((ele) => (
         <div key={ele.id}>
-          {console.log(
+          {/* {console.log(
             'ELE',
             'IDX',
             idx,
             ele.data.electricityContract.tariffPeriod[0]
-          )}
+          )} */}
           <Grid
             templateColumns="repeat(12, 1fr)"
             gap={4}
@@ -29,32 +29,49 @@ export default function BestPlans({ postcode }) {
             mb="20px"
             rounded="2xl"
           >
-            {/* If greenPowerCalculated has values in it grab them
-            If hasApp is true display Has an App
-            If Australian is truen display Aussie */}
-            <GridItem colSpan={1} bg="red.200">
+            <GridItem gridColumn="1" bg="red.200">
               {`${ele.data.brandName} `}
             </GridItem>
-            <GridItem colSpan={2} bg="blue.300">
+            <GridItem gridColumn="2 / span 3" bg="blue.300">
               {ele.data.displayName}
             </GridItem>
             <GridItem gridRow="2">{`Has an App: ${ele.hasApp}`}</GridItem>
             <GridItem gridRow="3">{`Aussie: ${ele.australian}`}</GridItem>
-            <GridItem colSpan={2} bg="blue.300">
+            {/* <GridItem colSpan={2} bg="blue.300">
               {`${ele.data.electricityContract.fees[0]}`}
-            </GridItem>
+            </GridItem> */}
             <GridItem gridRow="4">{`Plan ID: ${ele.data.planId}`}</GridItem>
-            <GridItem colSpan={2} bg="green.300">
+            <GridItem
+              gridRow="1"
+              gridColumn="5 / span 3"
+              bg="yellow.300"
+            >{`Yearly cost for 15kWh p/d: $${Math.round(
+              ele.yearlyPrice / 100
+            )}`}</GridItem>
+            <GridItem gridRow="2" gridColumn=" 5 / span 3" bg="yellow.200">
               {`Daily supply cost: ${ele.data.electricityContract.tariffPeriod[0].dailySupplyCharges}`}
             </GridItem>
-            <GridItem colSpan={2} bg="yellow.300">
+            <GridItem gridRow="3" gridColumn="5 / span 3" bg="yellow.100">
               {`Unit cost: ${ele.data.electricityContract.tariffPeriod[0].singleRate.rates?.[0].unitPrice}`}
             </GridItem>
-            <GridItem>{` $${Math.round(ele.yearlyPrice / 100)}`}</GridItem>
-            <GridItem colSpan={2}>{` Green Rating: ${(
+
+            <GridItem
+              gridRow="1"
+              gridColumn="8 / span 3"
+              bg="green.300"
+            >{`Comapny Green Rating: ${(
               Math.round(ele.greenRating * 2) / 2
             ).toFixed(1)}`}</GridItem>
-            <GridItem>{ele.tonnesMwh}</GridItem>
+            <GridItem
+              gridRow="2"
+              gridColumn="8 / span 3"
+              bg="green.200"
+            >{`Tonnes of carbon per MWh: ${ele.tonnesMwh}`}</GridItem>
+            <GridItem gridRow="3" gridColumn="8 / span 3" bg="green.100">
+              {`Equivalent car emssions: ${parseFloat(
+                ele.tonnesMwh / 1.62
+              ).toFixed(2)}`}
+            </GridItem>
             {/* <GridItem>
               {`${ele.greenPowerCalculated[0]}`}
             </GridItem> */}
@@ -63,7 +80,15 @@ export default function BestPlans({ postcode }) {
       ));
     }
     if (loading) {
-      return <> Calculating...</>;
+      return (
+        <Flex justifyContent="center">
+          <CircularProgress
+            isIndeterminate
+            color="green.300"
+            size={{ base: '60px', lg: '120px' }}
+          />
+        </Flex>
+      );
     }
     return <> Sorry, there are no plans available</>;
   };

@@ -68,7 +68,8 @@
     {
       "id": 14,
       "value": "Diamond",
-      "display": "Diamond Energy"
+      "display": "Diamond Energy",
+      "image": "/CompanyLogos/Diamond.png"
     },
     {
       "id": 15,

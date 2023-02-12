@@ -1,13 +1,21 @@
 /** @format */
 
-import { Box, Button, Input, Select } from '@chakra-ui/react';
-
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
-// import jsonData from '../data/energyCompanies.json';
 
-// const { companies } = jsonData;
+import { Box, Button, Input, Flex, FormControl } from '@chakra-ui/react';
+
+import {
+  AutoComplete,
+  AutoCompleteInput,
+  AutoCompleteItem,
+  AutoCompleteList,
+} from '@choc-ui/chakra-autocomplete';
+
+import jsonData from '../data/energyCompanies.json';
+
+const { companies } = jsonData;
 
 export default function PostcodeSearch({ sendTo, postCode }) {
   const [postCodeState, setPostCode] = useState(postCode);
@@ -35,33 +43,42 @@ export default function PostcodeSearch({ sendTo, postCode }) {
 
   return (
     <Box>
-      <Select
-        maxW="419"
-        placeholder="Choose your current provider"
-        size={{ base: 'md', md: 'md', lg: 'lg' }}
-        _placeholder={{ opacity: 1, color: 'gray.700' }}
-        mt="20px"
-        mb="10px"
-        fontWeight="semibold"
-        bg="white"
-        color="green.700"
-        boxShadow="md"
-        // _hover={{
-        //   color: 'white',
-        //   bg: 'green.400',
-        //   border: '2px',
-        //   borderColor: 'white',
-        // }}
-        // _focus={{
-        //   borderColor: 'green.400',
-        //   border: '3px',
-        // }}
-      >
-        <option style={{ color: 'red' }} value="option1">
-          Option 1
-        </option>
-        <option>Option 2</option>
-      </Select>
+      <Flex maxW="419px" mt="20px" mb="10px">
+        <FormControl
+          w="60"
+          bg="white"
+          maxW="419px"
+          minW={{ base: '325px', md: '325px', lg: '420px' }}
+        >
+          <AutoComplete openOnFocus maxW="419px">
+            <AutoCompleteInput
+              placeholder="Search for your current provider"
+              _placeholder={{ opacity: 1, color: 'green.700' }}
+              size={{ base: 'md', md: 'md', lg: 'lg' }}
+              maxW="419px"
+              bg="white"
+              color="green.700"
+              fontWeight="semibold"
+              borderColor="gray.300"
+              boxShadow="md"
+              _hover={{
+                borderColor: 'gray.400',
+              }}
+            />
+            <AutoCompleteList maxW="419px" minW="415px" mt="0">
+              {companies.map((data) => (
+                <AutoCompleteItem
+                  key={`option-${data.id}`}
+                  value={data.display}
+                  textTransform="capitalize"
+                >
+                  {data.display}
+                </AutoCompleteItem>
+              ))}
+            </AutoCompleteList>
+          </AutoComplete>
+        </FormControl>
+      </Flex>
       <Input
         value={postCodeState}
         type="number"
@@ -73,23 +90,15 @@ export default function PostcodeSearch({ sendTo, postCode }) {
         bg="white"
         color="green.700"
         fontWeight="semibold"
+        borderColor="gray.300"
         boxShadow="md"
         _placeholder={{
           opacity: 1,
           color: 'green.700',
         }}
-        // _hover={{
-        //   color: 'white',
-        //   bg: 'green.400',
-        //   border: '2px',
-        //   borderColor: 'green.400',
-        // }}
-        // _focus={{
-        //   color: 'green.600',
-        //   bg: 'white',
-        //   borderColor: 'green.400',
-        //   border: '3px',
-        // }}
+        _hover={{
+          borderColor: 'gray.400',
+        }}
       />
       {sendTo ? (
         <Link
