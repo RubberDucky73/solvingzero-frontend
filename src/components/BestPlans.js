@@ -3,11 +3,32 @@ import { collectionGroup, getDocs, where, query } from 'firebase/firestore';
 import { Flex, Grid, GridItem, CircularProgress } from '@chakra-ui/react';
 import { db } from '../firebase/config';
 import PostcodeSearch from './PostcodeSearch';
+import { RenderIf, ratesFormat } from '../utils/utils';
 
+const FeesList = (fees) => {
+  if (fees) {
+    console.log('Fees', fees);
+    return fees?.plans?.map((e, idx) => (
+      <div style={{ background: 'red' }}>
+        <h1>{idx}</h1>
+        <li>{`Amount ${e?.amount}`}</li>
+
+        <RenderIf value={e.rate}>
+          {(rate) => <li>{`Rate :${ratesFormat(rate)}`}</li>}
+        </RenderIf>
+
+        <li>{`Description ${e?.description}`}</li>
+        <li>{`Term ${e?.term}`}</li>
+        <li>{`Type ${e?.type}`}</li>
+      </div>
+    ));
+  }
+  return null;
+};
 export default function BestPlans({ postcode }) {
   const [bestPlansState, setBestPlans] = useState(null);
   const [loading, setLoading] = useState(true);
-
+  console.log(bestPlansState);
   const renderList = () => {
     if (bestPlansState?.length && !loading) {
       return bestPlansState?.map((ele) => (
@@ -40,6 +61,7 @@ export default function BestPlans({ postcode }) {
             {/* <GridItem colSpan={2} bg="blue.300">
               {`${ele.data.electricityContract.fees[0]}`}
             </GridItem> */}
+            <FeesList plans={ele.data.electricityContract.fees} />
             <GridItem gridRow="4">{`Plan ID: ${ele.data.planId}`}</GridItem>
             <GridItem
               gridRow="1"
