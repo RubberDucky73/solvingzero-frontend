@@ -271,16 +271,16 @@ const NAV_ITEMS = [
     href: '#',
   },
   {
-    label: 'Tips & Advice',
+    label: 'Guides & Tips',
     children: [
       {
-        label: 'Energy Efficency',
+        label: 'Energy Efficency Tips',
         subLabel: 'Practical ways to save and spend less',
         href: '#',
       },
       {
-        label: 'Emissions facts',
-        subLabel: 'How we emit carbon everyday',
+        label: 'Energy Deep Dive',
+        subLabel: 'Learn more about your energy',
         href: '#',
       },
     ],
