@@ -5,6 +5,8 @@ import Layout from '../components/Layout';
 import Hero from '../components/Hero';
 import HeroCards from '../components/HeroCards';
 import EnergyStats from '../components/EnergyStats';
+import LandingCard from '../components/LandingCard';
+import HeroProblem from '../components/HeroProblems';
 
 export default function Home() {
   return (
@@ -26,16 +28,19 @@ export default function Home() {
         <meta property="og:image" content="solving_zero_social.png" />
         <link rel="icon" href="/SZ_favicon.webp" />
       </Head>
-      <main>
-        <Layout>
+      <Layout>
+        <main>
           <Grid
             gridTemplateColumns="minmax(350px, 1fr) 3fr"
-            gridTemplateRows={{ base: 'repeat(3, 1fr)', md: ' 1fr 1fr' }}
+            // gridTemplateRows={{
+            //   base: 'repeat(4, 1fr)',
+            //   md: ' 1fr 300px 200px',
+            // }}
           >
             <GridItem
               gridRow={{ base: '1', md: '1' }}
               gridColumn={{ base: '1', md: '1 / 3' }}
-              ml={{ md: '20px' }}
+              ml={{ md: '5%' }}
             >
               <Hero />
             </GridItem>
@@ -54,9 +59,36 @@ export default function Home() {
             >
               <EnergyStats />
             </GridItem>
+            <GridItem
+              gridRow={{ base: '4', md: '3' }}
+              gridColumn={{ md: '1 / 3' }}
+              background="gray.50"
+              mt="125px"
+              // pt="200px"
+              // alignItems="center"
+            >
+              <LandingCard />
+            </GridItem>
+            <GridItem
+              gridRow={{ base: '5', md: '4' }}
+              gridColumn={{ md: '1 / 3' }}
+              background="green.700"
+              transform="skewY(-6deg)"
+              mt="175px"
+              minH="500px"
+              // alignItems="center"
+            />
+            <GridItem
+              gridRow={{ base: '5', md: '4' }}
+              gridColumn={{ md: '1 / 3' }}
+              zIndex="1"
+              mt="175px"
+            >
+              <HeroProblem />
+            </GridItem>
           </Grid>
-        </Layout>
-      </main>
+        </main>
+      </Layout>
     </>
   );
 }

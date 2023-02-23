@@ -1,9 +1,9 @@
 import { createClient } from 'contentful';
-import { Text, Heading, SimpleGrid, Container } from '@chakra-ui/react';
+import { Container, Heading, SimpleGrid, Text } from '@chakra-ui/react';
 
-import ArticleCard from '../../components/ArticleCard';
-import Layout from '../../components/Layout';
-// import Footer from '../../components/Footer';
+import AdviceCard from '../../components/AdviceCard';
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
 
 export async function getStaticProps() {
   const client = createClient({
@@ -11,7 +11,7 @@ export async function getStaticProps() {
     accessToken: process.env.CONTENTFUL_ACCESS_KEY,
   });
 
-  const res = await client.getEntries({ content_type: 'articleDefault' });
+  const res = await client.getEntries({ content_type: 'advicePost' });
 
   return {
     props: {
@@ -23,16 +23,16 @@ export async function getStaticProps() {
 export default function Articles({ articles }) {
   console.log(articles);
   return (
-    <Layout>
+    <>
+      <Navbar />
       <Container maxW="4xl">
         <Heading mt="40px" mr="20px" mb="10px" ml="20px">
-          Learn more about energy in Australia
+          Discover tips and advice on saving energy in your home
         </Heading>
         <Text mt="10px" mr="20px" mb="10px" ml="20px">
-          Each article below is our own in-depth analysis of popular energy
-          topics. In each article we take a deep dive into a specific topic with
-          the goal to paint a more vivid picture on the state of green energy in
-          Australia.
+          The articles here are strictly advice and tips based on facts and cold
+          hard research. We try to remove the fluff and boring overspeak as much
+          as possible.
         </Text>
       </Container>
       <SimpleGrid
@@ -49,9 +49,10 @@ export default function Articles({ articles }) {
         justifyItems="center"
       >
         {articles.map((article) => (
-          <ArticleCard key={article.sys.id} article={article} />
+          <AdviceCard key={article.sys.id} article={article} />
         ))}
       </SimpleGrid>
-    </Layout>
+      <Footer />
+    </>
   );
 }

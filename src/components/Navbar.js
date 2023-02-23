@@ -84,6 +84,7 @@ export default function WithSubnavigation() {
           </Flex>
           <Button
             as="a"
+            href="../../compare-electricity-providers"
             display={{ base: 'none', md: 'inline-flex' }}
             fontSize="sm"
             fontWeight={700}
@@ -91,7 +92,6 @@ export default function WithSubnavigation() {
             bg="white"
             border="2px"
             borderColor="green.500"
-            href="#"
             _hover={{
               color: 'white',
               bg: 'green.500',
@@ -267,41 +267,41 @@ const MobileNavItem = ({ label, children, href }) => {
 
 const NAV_ITEMS = [
   {
-    label: 'Compare Plans',
-    href: '#',
-  },
-  {
     label: 'Guides & Tips',
     children: [
       {
         label: 'Energy Efficency Tips',
         subLabel: 'Practical ways to save and spend less',
-        href: '#',
+        href: '/advice',
       },
       {
         label: 'Energy Deep Dive',
         subLabel: 'Learn more about your energy',
-        href: '#',
+        href: '/article',
       },
     ],
   },
   {
-    label: 'Energy Data Calculator',
-    children: [
-      {
-        label: 'Energy pricing calculator',
-        subLabel: 'Examine over 20,000 plans instantly',
-        href: '#',
-      },
-      {
-        label: 'Emissions calculator',
-        subLabel: 'Emissions maths for normal people',
-        href: '#',
-      },
-    ],
+    label: 'Compare Plans',
+    href: '/compare-electricity-providers',
   },
-  {
-    label: 'Green Energy Guide',
-    href: '#',
-  },
+  // {
+  //   label: 'Energy Data Calculator',
+  //   children: [
+  //     {
+  //       label: 'Energy pricing calculator',
+  //       subLabel: 'Examine over 20,000 plans instantly',
+  //       href: '#',
+  //     },
+  //     {
+  //       label: 'Emissions calculator',
+  //       subLabel: 'Emissions maths for normal people',
+  //       href: '#',
+  //     },
+  //   ],
+  // },
+  // {
+  //   label: 'Green Energy Guide',
+  //   href: '#',
+  // },
 ];

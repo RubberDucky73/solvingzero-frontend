@@ -1,5 +1,6 @@
 // pages/_app.js
 import { ChakraProvider, extendTheme } from '@chakra-ui/react';
+import { withProse } from '@nikolovlazar/chakra-ui-prose';
 
 // 2. Extend the theme to include custom colors, fonts, etc
 // const colors = {
@@ -10,16 +11,18 @@ import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 //   },
 // };
 
-const theme = extendTheme({
-  styles: {
-    global: () => ({
-      body: {
-        bg: '#f7fff9',
-        // bg: '#f2ffed',
-      },
-    }),
+export const theme = extendTheme(
+  {
+    styles: {
+      global: () => ({
+        body: {
+          bg: '#f7fff9',
+        },
+      }),
+    },
   },
-});
+  withProse()
+);
 
 // 3. Pass the `theme` prop to the `ChakraProvider`
 function MyApp({ Component, pageProps }) {

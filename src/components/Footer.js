@@ -3,6 +3,7 @@ import {
   chakra,
   Container,
   Link,
+  Image,
   SimpleGrid,
   Stack,
   Text,
@@ -11,6 +12,8 @@ import {
   IconButton,
   useColorModeValue,
 } from '@chakra-ui/react';
+
+import NextLink from 'next/link';
 
 // import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 // import { BiMailSend } from 'react-icons/bi';
@@ -57,8 +60,21 @@ export default function LargeWithNewsletter() {
           spacing={7}
         >
           <Stack spacing={6}>
-            <Box>XYZ</Box>
-            <Text fontSize="sm">© 2023 Solving Zero. All rights reserved</Text>
+            <Box>
+              {' '}
+              <NextLink href="/" passHref>
+                <Link>
+                  <Image
+                    src="/solvingzero-logo.png"
+                    alt="SolvingZero logo"
+                    minH={{ base: '20px', md: '35px' }}
+                    minW={{ base: '40px', md: '70px' }}
+                    maxH={{ base: '40px' }}
+                  />
+                </Link>
+              </NextLink>
+            </Box>
+            <Text fontSize="sm">© 2023 SolvingZero. All rights reserved</Text>
             <Stack direction="row" spacing={6}>
               <SocialButton label="Twitter" href="#">
                 X
@@ -82,7 +98,6 @@ export default function LargeWithNewsletter() {
             <Link href="#">Terms of Service</Link>
             <Link href="#">Legal</Link>
             <Link href="#">Privacy Policy</Link>
-            <Link href="#">Satus</Link>
           </Stack>
           <Stack align="flex-start">
             <ListHeader>Stay up to date</ListHeader>

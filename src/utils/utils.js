@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-no-useless-fragment */
 export function ratesFormat(rate) {
   if (rate) {
-    return `${rate * 100}%`;
+    return `${rate}%`;
   }
   return null;
 }

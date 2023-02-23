@@ -5,7 +5,6 @@ import {
   Stat,
   StatLabel,
   StatNumber,
-  useColorModeValue,
 } from '@chakra-ui/react';
 
 function StatsCard(props) {
@@ -14,12 +13,14 @@ function StatsCard(props) {
     <Stat
       px={{ base: 4, md: 8 }}
       py="5"
-      shadow="xl"
+      shadow="lg"
       color="green.700"
-      backgroundColor="white"
-      border="1px solid"
-      borderColor={useColorModeValue('white', 'gray.500')}
+      bgGradient="none"
+      // border="1px outset"
+      // borderColor="gray.100"
       rounded="lg"
+      mx="5%"
+      maxW="7xl"
     >
       <StatLabel fontWeight="medium" isTruncated>
         {title}
