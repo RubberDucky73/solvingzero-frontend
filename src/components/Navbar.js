@@ -26,7 +26,7 @@ import {
   ChevronRightIcon,
 } from '@chakra-ui/icons';
 
-export default function WithSubnavigation() {
+function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
@@ -56,16 +56,14 @@ export default function WithSubnavigation() {
         </Flex>
         <Flex justify={{ base: 'center', md: 'start' }}>
           <NextLink href="/" passHref>
-            <Link>
-              <Image
-                src="/solvingzero-logo.png"
-                alt="SolvingZero logo"
-                align={useBreakpointValue({ base: 'center', md: 'left' })}
-                minH={{ base: '1', md: '45px' }}
-                minW={{ base: '1', md: '90px' }}
-                maxH={{ base: '50px' }}
-              />
-            </Link>
+            <Image
+              src="/solvingzero-logo.png"
+              alt="SolvingZero logo"
+              align={useBreakpointValue({ base: 'center', md: 'left' })}
+              minH={{ base: '1', md: '45px' }}
+              minW={{ base: '1', md: '90px' }}
+              maxH={{ base: '50px' }}
+            />
           </NextLink>
         </Flex>
 
@@ -305,3 +303,5 @@ const NAV_ITEMS = [
   //   href: '#',
   // },
 ];
+
+export default WithSubnavigation;

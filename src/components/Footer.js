@@ -63,15 +63,13 @@ export default function LargeWithNewsletter() {
             <Box>
               {' '}
               <NextLink href="/" passHref>
-                <Link>
-                  <Image
-                    src="/solvingzero-logo.png"
-                    alt="SolvingZero logo"
-                    minH={{ base: '20px', md: '35px' }}
-                    minW={{ base: '40px', md: '70px' }}
-                    maxH={{ base: '40px' }}
-                  />
-                </Link>
+                <Image
+                  src="/solvingzero-logo.png"
+                  alt="SolvingZero logo"
+                  minH={{ base: '20px', md: '35px' }}
+                  minW={{ base: '40px', md: '70px' }}
+                  maxH={{ base: '40px' }}
+                />
               </NextLink>
             </Box>
             <Text fontSize="sm">© 2023 SolvingZero. All rights reserved</Text>

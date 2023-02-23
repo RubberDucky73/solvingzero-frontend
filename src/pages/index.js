@@ -29,65 +29,63 @@ export default function Home() {
         <link rel="icon" href="/SZ_favicon.webp" />
       </Head>
       <Layout>
-        <main>
-          <Grid
-            gridTemplateColumns="minmax(350px, 1fr) 3fr"
-            // gridTemplateRows={{
-            //   base: 'repeat(4, 1fr)',
-            //   md: ' 1fr 300px 200px',
-            // }}
+        <Grid
+          gridTemplateColumns="minmax(350px, 1fr) 3fr"
+          // gridTemplateRows={{
+          //   base: 'repeat(4, 1fr)',
+          //   md: ' 1fr 300px 200px',
+          // }}
+        >
+          <GridItem
+            gridRow={{ base: '1', md: '1' }}
+            gridColumn={{ base: '1', md: '1 / 3' }}
+            ml={{ md: '5%' }}
           >
-            <GridItem
-              gridRow={{ base: '1', md: '1' }}
-              gridColumn={{ base: '1', md: '1 / 3' }}
-              ml={{ md: '5%' }}
-            >
-              <Hero />
-            </GridItem>
-            <GridItem
-              gridRow={{ base: '2', md: '1' }}
-              position={{ base: 'relative', md: 'relative' }}
-              top={{ base: '-50px', md: '0', lg: '0' }}
-              right={{ md: '220', lg: '320' }}
-            >
-              <HeroCards />
-            </GridItem>
-            <Spacer />
-            <GridItem
-              gridRow={{ base: '3', md: '2' }}
-              gridColumn={{ md: '1 / 3' }}
-            >
-              <EnergyStats />
-            </GridItem>
-            <GridItem
-              gridRow={{ base: '4', md: '3' }}
-              gridColumn={{ md: '1 / 3' }}
-              background="gray.50"
-              mt="125px"
-              // pt="200px"
-              // alignItems="center"
-            >
-              <LandingCard />
-            </GridItem>
-            <GridItem
-              gridRow={{ base: '5', md: '4' }}
-              gridColumn={{ md: '1 / 3' }}
-              background="green.700"
-              transform="skewY(-6deg)"
-              mt="175px"
-              minH="500px"
-              // alignItems="center"
-            />
-            <GridItem
-              gridRow={{ base: '5', md: '4' }}
-              gridColumn={{ md: '1 / 3' }}
-              zIndex="1"
-              mt="175px"
-            >
-              <HeroProblem />
-            </GridItem>
-          </Grid>
-        </main>
+            <Hero />
+          </GridItem>
+          <GridItem
+            gridRow={{ base: '2', md: '1' }}
+            position={{ base: 'relative', md: 'relative' }}
+            top={{ base: '-50px', md: '0', lg: '0' }}
+            right={{ md: '220', lg: '320' }}
+          >
+            <HeroCards />
+          </GridItem>
+          <Spacer />
+          <GridItem
+            gridRow={{ base: '3', md: '2' }}
+            gridColumn={{ md: '1 / 3' }}
+          >
+            <EnergyStats />
+          </GridItem>
+          <GridItem
+            gridRow={{ base: '4', md: '3' }}
+            gridColumn={{ md: '1 / 3' }}
+            background="gray.50"
+            mt="125px"
+            // pt="200px"
+            // alignItems="center"
+          >
+            <LandingCard />
+          </GridItem>
+          <GridItem
+            gridRow={{ base: '5', md: '4' }}
+            gridColumn={{ md: '1 / 3' }}
+            background="green.700"
+            transform="skewY(-6deg)"
+            mt="175px"
+            minH="500px"
+            // alignItems="center"
+          />
+          <GridItem
+            gridRow={{ base: '5', md: '4' }}
+            gridColumn={{ md: '1 / 3' }}
+            zIndex="1"
+            mt="175px"
+          >
+            <HeroProblem />
+          </GridItem>
+        </Grid>
       </Layout>
     </>
   );
