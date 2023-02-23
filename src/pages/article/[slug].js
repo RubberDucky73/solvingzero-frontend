@@ -1,7 +1,11 @@
 import { createClient } from 'contentful';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import Image from 'next/image';
-import { Container } from '@chakra-ui/react';
+import { Prose } from '@nikolovlazar/chakra-ui-prose';
+
+import { Container, Heading, Text, Box, Avatar, Grid } from '@chakra-ui/react';
+import dayjs from 'dayjs';
+// import RichText from '../../components/RichText';
 
 import Skeleton from '../../components/ArticleSkeleton';
 import Navbar from '../../components/Navbar';
@@ -50,29 +54,60 @@ export async function getStaticProps({ params }) {
 
 export default function Article({ article }) {
   if (!article) return <Skeleton />;
-
-  const { featuredImage, title, author, date, articleBody } = article.fields;
-  console.log(article);
+  const { featuredImage, title, subHeading, author, date, articleBody } =
+    article.fields;
+  const formatDate = dayjs({ date }[0]).format('MMM DD, YYYY');
   return (
     <>
       <Navbar />
-      <Container maxW="5xl" minH="100vh">
-        <div className="banner">
+      <Container
+        maxW={{ base: '7xl', md: '4xl' }}
+        minH="100vh"
+        minW
+        bgColor="white"
+        shadow="lg"
+        border="2px"
+        borderColor="gray.50"
+        padding="50px"
+      >
+        <Heading mt={{ base: '2px', md: '10px' }} as="h1" color="green.900">
+          {title}
+        </Heading>
+        <Text mt="20px" fontSize="lg" fontWeight="semibold" color="green.900">
+          {subHeading}
+        </Text>
+        <Grid
+          columns={2}
+          justifyContent="start"
+          mt="20px"
+          mb="20px"
+          alignItems="start"
+        >
+          <Avatar gridColumn="1" name="Sam Bendat" src="/samAvatar.webp" />
+          <Box gridColumn="2" ml="10px">
+            <Text color="green.900">{author.fields.authorName}</Text>
+            <Text fontSize="sm" color="green.800">
+              {formatDate}
+            </Text>
+          </Box>
+        </Grid>
+        <Box
+          // maxW={{ base: '100%', md: '100%' }}
+          minW={{ md: '{featuredImage.fields.file.details.image.width}' }}
+          minH={{ md: '{featuredImage.fields.file.details.image.height}' }}
+        >
           <Image
             src={`https:${featuredImage.fields.file.url}`}
             width={featuredImage.fields.file.details.image.width}
             height={featuredImage.fields.file.details.image.height}
             alt={featuredImage.fields.title}
           />
-          <h1>{title}</h1>
-        </div>
-        <div className="Info">
-          <p className="author"> {author.fields.authorName}</p>
-          <p className="date">Published on: {date}</p>
-        </div>
-        <div className="body">
-          <div>{documentToReactComponents(articleBody)}</div>
-        </div>
+        </Box>
+        {/* <RichText> */}
+        <Prose fontWeight="semibold">
+          {documentToReactComponents(articleBody)}
+        </Prose>
+        {/* </RichText> */}
       </Container>
       <Footer />
     </>

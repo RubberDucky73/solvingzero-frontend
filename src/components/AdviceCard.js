@@ -1,7 +1,6 @@
 import NextLink from 'next/link';
 import Image from 'next/image';
-
-import { Heading, Grid, GridItem, Text, Card, Link } from '@chakra-ui/react';
+import { Card, Grid, GridItem, Heading, Link, Text } from '@chakra-ui/react';
 
 export default function ArticleCard({ article }) {
   const { title, slug, thumbnail, author, date, blurb } = article.fields;
@@ -10,7 +9,7 @@ export default function ArticleCard({ article }) {
     <Card maxW="sm" maxH="lg">
       <Grid>
         <GridItem>
-          <Link as={NextLink} href={`/article/${slug}`}>
+          <Link as={NextLink} href={`/advice/${slug}`}>
             <Image
               src={`https:${thumbnail.fields.file.url}`}
               alt={thumbnail.fields.title}
@@ -35,7 +34,7 @@ export default function ArticleCard({ article }) {
             fontSize="lg"
             as={NextLink}
             color="green.500 "
-            href={`/article/${slug}`}
+            href={`/advice/${slug}`}
           >
             Read more...
           </Link>

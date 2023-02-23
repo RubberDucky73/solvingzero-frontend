@@ -59,8 +59,8 @@ export default function PostcodeSearch({ sendTo, postCode }) {
               bg="white"
               color="green.700"
               fontWeight="semibold"
-              borderColor="gray.300"
-              boxShadow="md"
+              borderColor="gray.50"
+              boxShadow="lg"
               _hover={{
                 borderColor: 'gray.400',
               }}
@@ -90,8 +90,8 @@ export default function PostcodeSearch({ sendTo, postCode }) {
         bg="white"
         color="green.700"
         fontWeight="semibold"
-        borderColor="gray.300"
-        boxShadow="md"
+        borderColor="gray.50"
+        boxShadow="lg"
         _placeholder={{
           opacity: 1,
           color: 'green.700',
@@ -103,7 +103,7 @@ export default function PostcodeSearch({ sendTo, postCode }) {
       {sendTo ? (
         <Link
           href={{
-            pathname: '/green-energy',
+            pathname: '/compare-electricity-providers',
             query: { postcode: postCodeState },
           }}
           legacyBehavior

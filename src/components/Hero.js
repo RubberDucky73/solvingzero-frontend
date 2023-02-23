@@ -8,6 +8,7 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 import PostcodeSearch from './PostcodeSearch';
+
 // import HeroCards from './HeroCards';
 
 export default function CallToAction() {
@@ -41,17 +42,9 @@ export default function CallToAction() {
               by switching energy providers
             </Text>
           </Heading>
-
           <PostcodeSearch sendTo />
         </Stack>
-        <Flex
-          flex={1}
-          // justify="center"
-          // align="center"
-          position="relative"
-          w="full"
-          // gridRow="2"
-        >
+        <Flex flex={1} position="relative" w="full">
           <Blob
             w="100%"
             h={{ base: '85vh', md: '60vh' }}
@@ -77,19 +70,6 @@ export default function CallToAction() {
             filter="auto"
             blur="90px"
             color={useColorModeValue('yellow.100', 'green.400')}
-          />
-          <Blob
-            w="100%"
-            h={{ base: '85vh', md: '60vh' }}
-            position="absolute"
-            overflow="hidden"
-            top={-780}
-            left={-950}
-            zIndex={-1}
-            opactity="0.1"
-            filter="auto"
-            blur="90px"
-            color={useColorModeValue('green.100', 'green.400')}
           />
           <Box
             position="relative"
