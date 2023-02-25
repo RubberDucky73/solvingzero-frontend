@@ -6,21 +6,23 @@ import {
   Text,
   Icon,
   useColorModeValue,
+  Grid,
+  GridItem,
 } from '@chakra-ui/react';
-import PostcodeSearch from './PostcodeSearch';
+import PostcodeSearch from '../PostcodeSearch';
 
 // import HeroCards from './HeroCards';
 
 export default function CallToAction() {
   return (
-    <Box maxW="7xl">
-      <Stack
-        align="center"
-        spacing={{ base: 0, md: 10 }}
-        py={{ base: 14, md: 28 }}
-        direction={{ base: 'column', md: 'row' }}
-      >
-        <Stack gridRow="1" flex={1} spacing={{ base: 4, md: 10 }}>
+    <Grid
+      align="start"
+      spacing={{ base: 0, md: 10 }}
+      py={{ base: 14, md: 28 }}
+      direction={{ base: 'column', md: 'row' }}
+    >
+      <Grid gridRow="1" maxW="50%">
+        <GridItem>
           <Heading
             lineHeight={1.25}
             fontWeight={600}
@@ -42,44 +44,41 @@ export default function CallToAction() {
               by switching energy providers
             </Text>
           </Heading>
+        </GridItem>
+        <GridItem>
           <PostcodeSearch sendTo />
-        </Stack>
-        <Flex flex={1} position="relative" w="full">
-          <Blob
-            w="100%"
-            h={{ base: '85vh', md: '60vh' }}
-            position="absolute"
-            overflow="hidden"
-            top={{ base: '-100', md: '-205', lg: '-300' }}
-            left={{ md: '-10' }}
-            zIndex={-1}
-            opactity="0.1"
-            filter="auto"
-            blur="70px"
-            color={useColorModeValue('green.100', 'green.400')}
-          />
-          <Blob
-            w="100%"
-            h={{ base: '45vh', md: '45vh' }}
-            position="absolute"
-            overflow="hidden"
-            top={{ base: '-30', md: '-95', lg: '-100' }}
-            left={{ md: '-10' }}
-            zIndex={-1}
-            opactity="0.1"
-            filter="auto"
-            blur="90px"
-            color={useColorModeValue('yellow.100', 'green.400')}
-          />
-          <Box
-            position="relative"
-            rounded="2xl"
-            width="full"
-            overflow="hidden"
-          />
-        </Flex>
-      </Stack>
-    </Box>
+        </GridItem>
+      </Grid>
+      <Flex flex={1} position="relative" w="full">
+        <Blob
+          w="100%"
+          h={{ base: '85vh', md: '60vh' }}
+          position="absolute"
+          overflow="hidden"
+          top={{ base: '-10', md: '-205', lg: '-400' }}
+          left={{ md: '-10' }}
+          zIndex={-1}
+          opactity="0.1"
+          filter="auto"
+          blur="70px"
+          color={useColorModeValue('green.100', 'green.400')}
+        />
+        <Blob
+          w="100%"
+          h={{ base: '45vh', md: '35vh' }}
+          position="absolute"
+          overflow="hidden"
+          top={{ base: '-10', md: '-95', lg: '-100' }}
+          left={{ md: '-10' }}
+          zIndex={-1}
+          opactity="0.1"
+          filter="auto"
+          blur="90px"
+          color={useColorModeValue('yellow.100', 'yellow.400')}
+        />
+        <Box position="relative" rounded="2xl" width="full" overflow="hidden" />
+      </Flex>
+    </Grid>
   );
 }
 

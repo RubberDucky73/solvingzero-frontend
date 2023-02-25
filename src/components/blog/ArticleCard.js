@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { Heading, Grid, GridItem, Text, Card, Link } from '@chakra-ui/react';
 
 export default function ArticleCard({ article }) {
-  const { title, slug, thumbnail, author, date, blurb } = article.fields;
+  const { title, slug, thumbnail, blurb } = article.fields;
 
   return (
     <Card maxW="sm" maxH="lg">

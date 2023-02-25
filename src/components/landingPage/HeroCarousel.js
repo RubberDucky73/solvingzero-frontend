@@ -12,14 +12,18 @@ import {
 } from '@chakra-ui/react';
 
 import {
-  CheckIcon,
   CheckCircleIcon,
-  SmallCloseIcon,
   StarIcon,
   WarningIcon,
   WarningTwoIcon,
 } from '@chakra-ui/icons';
-import json from '../data/companyHeroData.json';
+
+import { GiAustralia } from 'react-icons/gi';
+import { BiWorld } from 'react-icons/bi';
+import { MdPhonelinkErase, MdSmartphone } from 'react-icons/md';
+import { FaLeaf, FaSkullCrossbones } from 'react-icons/fa';
+
+import json from '../../data/companyHeroData.json';
 
 const determineGreenScaleItems = (green) => {
   let icon;
@@ -31,11 +35,11 @@ const determineGreenScaleItems = (green) => {
       color = 'green.400';
       break;
     case 'Green':
-      icon = CheckIcon;
+      icon = FaLeaf;
       color = 'green.400';
       break;
     case 'Polluter':
-      icon = WarningTwoIcon;
+      icon = FaSkullCrossbones;
       color = 'red.400';
       break;
   }
@@ -68,7 +72,11 @@ const determinePriceScaleItems = (price) => {
 
 export default function HeroCards() {
   return (
-    <Flex fontSize={{ base: 'sm' }}>
+    <Flex
+      mt={{ base: '80px' }}
+      minH={{ base: '200px' }}
+      fontSize={{ base: 'sm' }}
+    >
       <ReactCardCarousel
         spread="wide"
         disable_keydown="false"
@@ -121,14 +129,14 @@ export default function HeroCards() {
                 </ListItem>
                 <ListItem>
                   <ListIcon
-                    as={app ? CheckIcon : SmallCloseIcon}
+                    as={app ? MdSmartphone : MdPhonelinkErase}
                     color={app ? 'green.400' : 'red.400'}
                   />
                   {app ? 'Has an App' : 'No App'}
                 </ListItem>
                 <ListItem>
                   <ListIcon
-                    as={aus ? CheckIcon : SmallCloseIcon}
+                    as={aus ? GiAustralia : BiWorld}
                     color={aus ? 'green.400' : 'red.400'}
                   />
                   {aus ? 'Aussie Owned' : 'Foreign Owned'}

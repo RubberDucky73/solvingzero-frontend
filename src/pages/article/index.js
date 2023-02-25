@@ -1,8 +1,8 @@
 import { createClient } from 'contentful';
 import { Text, Heading, SimpleGrid, Container } from '@chakra-ui/react';
 
-import ArticleCard from '../../components/ArticleCard';
-import Layout from '../../components/Layout';
+import ArticleCard from '../../components/blog/ArticleCard';
+import Layout from '../../components/ui/Layout';
 // import Footer from '../../components/Footer';
 
 export async function getStaticProps() {

@@ -7,7 +7,7 @@ const Layout = ({ children }) => (
   <>
     <Box>
       <Navbar />
-      <Container maxW="7xl" minH="80vh" px="0" py="0" mx="0" width="100%">
+      <Container maxW="100%" px="0" mx="0" minH="80vh">
         {children}
       </Container>
       <Footer />
@@ -28,7 +28,7 @@ const Layout = ({ children }) => (
     />
     <Blob
       // w="100%"
-      h={{ base: '85vh', md: '60vh' }}
+      h={{ base: '75vh', md: '60vh' }}
       position="absolute"
       overflow="hidden"
       top={{ base: '-30', md: '-95', lg: '500' }}
@@ -37,22 +37,22 @@ const Layout = ({ children }) => (
       opactity="0.1"
       filter="auto"
       blur="90px"
-      color={useColorModeValue('yellow.100', 'green.400')}
+      color={useColorModeValue('yellow.100', 'yellow.400')}
     />
-    <Blob
+    {/* <Blob
       w={{ base: '100%', md: 'min-content' }}
       h={{ base: '85vh', md: '60vh' }}
       position="absolute"
       overflow="hidden"
-      top={600}
-      left={{ base: '{0}', md: '400' }}
+      top={650}
+      left={{ base: '{0}', md: '500' }}
       zIndex={-1}
       opactity="0.1"
       filter="auto"
       blur="90px"
-      maxW="7xl"
+      maxW="50%"
       color={useColorModeValue('green.100', 'green.400')}
-    />
+    /> */}
   </>
 );
 

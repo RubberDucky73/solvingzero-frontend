@@ -16,8 +16,6 @@ function StatsCard(props) {
       shadow="lg"
       color="green.700"
       bgGradient="none"
-      // border="1px outset"
-      // borderColor="gray.100"
       rounded="lg"
       mx="5%"
       maxW="7xl"

@@ -7,9 +7,9 @@ import { Container, Heading, Text, Box, Avatar, Grid } from '@chakra-ui/react';
 import dayjs from 'dayjs';
 // import RichText from '../../components/RichText';
 
-import Skeleton from '../../components/ArticleSkeleton';
-import Navbar from '../../components/Navbar';
-import Footer from '../../components/Footer';
+import Skeleton from '../../components/blog/ArticleSkeleton';
+import Navbar from '../../components/ui/Navbar';
+import Footer from '../../components/ui/Footer';
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,

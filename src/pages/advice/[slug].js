@@ -4,8 +4,8 @@ import Image from 'next/image';
 import { Container } from '@chakra-ui/react';
 import { Prose } from '@nikolovlazar/chakra-ui-prose';
 
-import Navbar from '../../components/Navbar';
-import Footer from '../../components/Footer';
+import Navbar from '../../components/ui/Navbar';
+import Footer from '../../components/ui/Footer';
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,

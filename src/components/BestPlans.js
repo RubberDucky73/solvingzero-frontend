@@ -1,4 +1,3 @@
-import { CheckIcon, SmallCloseIcon, SunIcon } from '@chakra-ui/icons';
 import {
   Box,
   Button,
@@ -14,6 +13,9 @@ import {
 } from '@chakra-ui/react';
 import { collectionGroup, getDocs, query, where } from 'firebase/firestore';
 import { useEffect, useState } from 'react';
+import { MdPhonelinkErase, MdSmartphone } from 'react-icons/md';
+import { GiAustralia } from 'react-icons/gi';
+import { BiWorld } from 'react-icons/bi';
 import jsonData from '../data/companyHeroData.json';
 import { db } from '../firebase/config';
 import { ratesFormat, RenderIf } from '../utils/utils';
@@ -33,17 +35,29 @@ function Aussie({ aussie }) {
 
   if (aussieOwned === 'Aussie Owned') {
     return (
-      <Box fontWeight="semibold" color="green.600">
-        <SunIcon /> <spacer />
-        {aussieOwned}
-      </Box>
+      <Flex fontWeight="semibold" color="green.600">
+        <Grid>
+          <GridItem gridRow="1" maxW="wrap" mr="2px" alignSelf="center">
+            <GiAustralia />
+          </GridItem>
+          <GridItem gridRow="1" maxW="max-content" placeSelf="center">
+            {aussieOwned}
+          </GridItem>
+        </Grid>
+      </Flex>
     );
   }
   return (
-    <Box fontWeight="semibold" color="red.500">
-      <SmallCloseIcon />
-      {aussieOwned}
-    </Box>
+    <Flex fontWeight="semibold" color="red.500">
+      <Grid>
+        <GridItem gridRow="1" maxW="wrap" mr="2px" alignSelf="center">
+          <BiWorld />
+        </GridItem>
+        <GridItem gridRow="1" maxW="max-content" placeSelf="center">
+          {aussieOwned}
+        </GridItem>
+      </Grid>
+    </Flex>
   );
 }
 
@@ -60,17 +74,29 @@ function HasApp({ ownApp }) {
 
   if (hasApp === 'Has an App') {
     return (
-      <Box fontWeight="semibold" color="green.600">
-        <CheckIcon /> <spacer />
-        {hasApp}
-      </Box>
+      <Flex fontWeight="semibold" color="green.600">
+        <Grid>
+          <GridItem gridRow="1" maxW="wrap" mr="2px" alignSelf="center">
+            <MdSmartphone />
+          </GridItem>
+          <GridItem gridRow="1" maxW="max-content" placeSelf="center">
+            {hasApp}
+          </GridItem>
+        </Grid>
+      </Flex>
     );
   }
   return (
-    <Box fontWeight="semibold" color="red.500">
-      <SmallCloseIcon />
-      {hasApp}
-    </Box>
+    <Flex fontWeight="semibold" color="red.500">
+      <Grid>
+        <GridItem gridRow="1" maxW="wrap" mr="2px" alignSelf="center">
+          <MdPhonelinkErase />
+        </GridItem>
+        <GridItem gridRow="1" maxW="max-content" placeSelf="center">
+          {hasApp}
+        </GridItem>
+      </Grid>
+    </Flex>
   );
 }
 
@@ -127,7 +153,7 @@ function FeesButton({ plans }) {
 
 const FeesList = (fees) => {
   if (fees) {
-    return fees?.plans?.map((e, idx) => (
+    return fees?.plans?.map((e) => (
       <Grid minW="250px" mb="30px" mt="20px" gridRowGap="5px">
         <GridItem>
           <Heading
@@ -165,7 +191,7 @@ export default function BestPlans({ postcode }) {
         );
 
         return (
-          <div key={ele.id}>
+          <Grid key={ele.id}>
             <Grid
               gridTemplateColumns={{
                 base: '1',
@@ -174,26 +200,29 @@ export default function BestPlans({ postcode }) {
               gap={4}
               bg="white"
               border="2px"
-              borderColor="gray.200"
+              borderColor="gray.50"
               shadow="md"
-              mt="20px"
+              mt={{ base: '50px', md: '20px' }}
               py="30px"
-              px="30px"
+              px={{ base: '20px', md: '30px' }}
               rounded="2xl"
             >
               {/* The company Logo */}
-              <Grid gridRow="1" columnGap={{ md: '10px' }}>
+              <Grid gridRow="1 / span 2" columnGap={{ md: '10px' }}>
                 <GridItem
                   gridColumn="1"
                   gridRow="1 / span 2"
                   minH="50px"
-                  minW="150px"
+                  minW="110px"
+                  justifySelf={{ base: 'center' }}
+                  placeSelf="center"
+                  mb={{ base: '20px', md: '0px' }}
                 >
                   <Image
                     src={`${filterObj?.[0]?.image}`}
-                    minH={{ base: '1', md: '45px' }}
-                    minW={{ base: '1', md: '90px' }}
-                    maxH={{ base: '40px' }}
+                    minH={{ base: '5', md: '60px' }}
+                    minW={{ base: '5', md: '110px' }}
+                    maxH={{ base: '55px' }}
                   />
                 </GridItem>
                 {/* Name of the company */}
@@ -213,19 +242,27 @@ export default function BestPlans({ postcode }) {
                   gridColumn={{ base: '1', md: '5 / span 1' }}
                   gridRow={{ base: '5', md: '1 / span 2' }}
                   alignSelf="center"
+                  mt="5px"
                   color="gray.500"
                 >
                   {`${ele.data.displayName} `}
-                  {`- ${ele.data.planId}`}
                 </GridItem>
+                {/* Plan ID */}
+                <GridItem
+                  gridColumn={{ base: '1', md: '6 / span 1' }}
+                  gridRow={{ base: '6', md: '1 / span 2' }}
+                  alignSelf="center"
+                  mt="5px"
+                  color="gray.500"
+                >{`${ele.data.planId}`}</GridItem>
               </Grid>
               {/* Extra plan Info */}
               <Grid
-                gridTemplateRows="30px 30px"
+                gridTemplateRows="35px 35px"
                 gridColumn={{ base: '1', md: '1 / span 2' }}
               >
-                <GridItem maxH="max-content">
-                  <HasApp gridRow="1" pb="30px" ownApp={ele.hasApp} />
+                <GridItem maxH="max-content" pb={{ base: '30px', md: '50px' }}>
+                  <HasApp gridRow="1" ownApp={ele.hasApp} />
                 </GridItem>
                 <GridItem maxH="max-content">
                   <Aussie gridRow="2" aussie={ele.australian} />
@@ -233,47 +270,58 @@ export default function BestPlans({ postcode }) {
               </Grid>
 
               {/* Pricing Below */}
-              <Grid
-                minW="max-content"
+              <GridItem
                 gridColumnStart={{ base: '1', md: '3' }}
                 gridColumnEnd={{ base: '1', md: '8' }}
                 gridrow={{ base: '3', md: '3' }}
-                bgGradient="linear(to-t, yellow.200, yellow.100)"
-                shadow="lg"
-                rounded="lg"
               >
-                {/* The yearly price */}
-                <GridItem>
-                  <Heading
-                    as="h2"
-                    fontSize={{ base: 'lg', md: '2xl' }}
-                    py="15px"
-                    px="30px"
-                  >
-                    {`$${Math.round(ele.yearlyPrice / 100)} per year`}
-                  </Heading>
-                </GridItem>
-                {/* Daily supply cost */}
-                <GridItem px="30px">
-                  {`Daily supply cost: ${
-                    Math.round(
-                      100 *
-                        ele.data.electricityContract.tariffPeriod[0]
-                          .dailySupplyCharges
-                    ) / 100
-                  }¢`}
-                </GridItem>
-                {/* Unit of kwh cost */}
-                <GridItem px="30px" pb="30px">
-                  {`Unit cost: ${(
-                    Math.round(
-                      100 *
-                        ele.data.electricityContract.tariffPeriod[0].singleRate
-                          .rates?.[0].unitPrice
-                    ) / 100
-                  ).toFixed(2)}¢`}
-                </GridItem>
-              </Grid>
+                <Grid
+                  minW="max-content"
+                  // gridColumnStart={{ base: '1', md: '3' }}
+                  // gridColumnEnd={{ base: '1', md: '8' }}
+                  // gridrow={{ base: '3', md: '2 / span 1' }}
+                  bgGradient="linear(to-t, yellow.200, yellow.100)"
+                  shadow="2xl"
+                  rounded="lg"
+                >
+                  {/* The yearly price */}
+                  <GridItem gridRow="1" gridColumn="1">
+                    <Heading
+                      as="h2"
+                      fontSize={{ base: 'lg', md: '2xl' }}
+                      py="15px"
+                      px="30px"
+                    >
+                      {`$${Math.round(ele.yearlyPrice / 100)} per year`}
+                    </Heading>
+                  </GridItem>
+                  {/* <GridItem gridRow="1" gridColumn="2" py="15px" px="30px">
+                  <Text>{`$${
+                    Math.round(ele.yearlyPrice / 100) / 12
+                  } per month`}</Text>
+                </GridItem> */}
+                  {/* Daily supply cost */}
+                  <GridItem px="30px">
+                    {`Daily charge (supply cost): ${
+                      Math.round(
+                        100 *
+                          ele.data.electricityContract.tariffPeriod[0]
+                            .dailySupplyCharges
+                      ) / 100
+                    }¢`}
+                  </GridItem>
+                  {/* Unit of kwh cost */}
+                  <GridItem px="30px" pb="30px">
+                    {`Price for each Kwh: ${(
+                      Math.round(
+                        100 *
+                          ele.data.electricityContract.tariffPeriod[0]
+                            .singleRate.rates?.[0].unitPrice
+                      ) / 100
+                    ).toFixed(2)}¢`}
+                  </GridItem>
+                </Grid>
+              </GridItem>
 
               {/* Green Rating Below */}
               <Grid
@@ -282,18 +330,12 @@ export default function BestPlans({ postcode }) {
                 gridColumnEnd={{ base: '1', md: '13' }}
                 gridrow={{ base: '4', md: '3' }}
                 bgGradient="linear(to-t, green.200, green.100)"
-                shadow="lg"
+                shadow="2xl"
                 rounded="lg"
+                mt={{ base: '10px', md: '0px' }}
               >
                 <GridItem>
-                  {/* <Heading
-                  as="h2"
-                  fontSize={{ base: 'lg', md: '3xl' }}
-                  py="15px"
-                  px="30px"
-                > */}
                   <EmissionsTotal ele={ele.tonnesMwh} />
-                  {/* </Heading> */}
                 </GridItem>
                 <GridItem px="30px">{`Comapny Green Rating: ${(
                   Math.round(ele.greenRating * 2) / 2
@@ -303,22 +345,50 @@ export default function BestPlans({ postcode }) {
                   pb="30px"
                 >{`Tonnes of carbon per MWh: ${ele.tonnesMwh}`}</GridItem>
               </Grid>
+              <GridItem
+                gridRow={{ base: '6', md: '4' }}
+                gridColumn={{ base: '1', md: '1 / span 2' }}
+                mb={{ base: '5px', md: '10px' }}
+                mt="0px"
+              >
+                <Flex justifyContent={{ base: 'center' }}>
+                  <Button
+                    minW="100%"
+                    border="2px"
+                    borderColor="blue.300"
+                    bg="blue.300"
+                    color="white"
+                    fontWeight="bold"
+                    boxShadow="md"
+                    mb={{ base: '40px', md: '0px' }}
+                    mt={{ base: '45px', md: '10px' }}
+                    _hover={{
+                      color: 'blue.500',
+                      bg: 'white',
+                      border: '2px',
+                      borderColor: 'blue.500',
+                    }}
+                  >
+                    Choose Plan
+                  </Button>
+                </Flex>
+              </GridItem>
 
               {/* <GridItem>
               {`${ele.greenPowerCalculated[0]}`}
             </GridItem> */}
               <Grid
-                gridRow={{ base: '6', md: '4' }}
+                gridRow={{ base: '7', md: '4' }}
                 gridColumnStart={{ base: '1', md: '1' }}
                 gridColumnEnd={{ base: '1', md: '13' }}
-                // display="block"
+                mt={{ md: '20px' }}
               >
                 <GridItem justifyContent="center">
                   <FeesButton plans={ele.data.electricityContract.fees} />
                 </GridItem>
               </Grid>
             </Grid>
-          </div>
+          </Grid>
         );
       });
     }
@@ -334,7 +404,11 @@ export default function BestPlans({ postcode }) {
         </Flex>
       );
     }
-    return <> Sorry, there are no plans available</>;
+    return (
+      <Heading as="h3" fontSize="md" fontWeight="semibold" mt="35px">
+        Sorry, there are no plans available
+      </Heading>
+    );
   };
   useEffect(() => {
     fetchPlans(postcode);
@@ -357,9 +431,11 @@ export default function BestPlans({ postcode }) {
     setTimeout(setLoading(false), 5000);
   };
   return (
-    <div>
-      <PostcodeSearch postCode={postcode} />
+    <Grid>
+      <Box>
+        <PostcodeSearch postCode={postcode} />
+      </Box>
       {renderList()}
-    </div>
+    </Grid>
   );
 }
