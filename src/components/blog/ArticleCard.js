@@ -20,9 +20,11 @@ export default function ArticleCard({ article }) {
           </Link>
         </GridItem>
         <GridItem mt="10px" mr="10px" ml="10px">
-          <Heading color="green.800" size="lg">
-            {title}
-          </Heading>
+          <Link as={NextLink} href={`/article/${slug}`}>
+            <Heading color="green.800" size="lg">
+              {title}
+            </Heading>
+          </Link>
         </GridItem>
         <GridItem mt="10px" mr="10px" mb="10px" ml="10px">
           <Text color="green.900">{blurb}</Text>

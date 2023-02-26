@@ -17,104 +17,104 @@
     },
     {
       "id": 4,
+      "value": "AGL",
+      "display": "AGL"
+    },
+    {
+      "id": 5,
       "value": "Alinta",
       "display": "Alinta Energy"
     },
     {
-      "id": 5,
+      "id": 6,
       "value": "Amber",
       "display": "Amber Electric"
     },
     {
-      "id": 6,
+      "id": 7,
       "value": "Arc",
       "display": "Arc Energy"
     },
     {
-      "id": 7,
+      "id": 8,
       "value": "ArclineRACV",
       "display": "Arcline by RACV"
     },
     {
-      "id": 8,
+      "id": 9,
       "value": "Aurora",
       "display": "Aurora Energy"
     },
     {
-      "id": 9,
+      "id": 10,
       "value": "BlueNRG",
       "display": "Blue NRG"
     },
     {
-      "id": 10,
+      "id": 11,
       "value": "BrightSpark",
       "display": "Bright Spark Power"
     },
     {
-      "id": 11,
+      "id": 12,
       "value": "Brighte",
       "display": "Brighte"
     },
     {
-      "id": 12,
+      "id": 13,
       "value": "Circular",
       "display": "Circular Energy"
     },
     {
-      "id": 13,
+      "id": 14,
       "value": "CovaU",
       "display": "CovaU"
     },
     {
-      "id": 14,
+      "id": 15,
       "value": "Diamond",
       "display": "Diamond Energy",
       "image": "/CompanyLogos/Diamond.png"
     },
     {
-      "id": 15,
+      "id": 16,
       "value": "Discover",
       "display": "Discover Energy"
     },
     {
-      "id": 16,
+      "id": 17,
       "value": "Dodo",
       "display": "Dodo Energy"
     },
     {
-      "id": 17,
+      "id": 18,
       "value": "ElectricityBox",
       "display": "Electricity in a box"
     },
     {
-      "id": 18,
+      "id": 19,
       "value": "Elysian",
       "display": "Elysian Energy"
     },
     {
-      "id": 19,
+      "id": 20,
       "value": "EnergyAustralia",
       "display": "Energy Australia"
     },
     {
-      "id": 20,
+      "id": 21,
       "value": "EnergyLocals",
       "display": "Energy Locals"
     },
     {
-      "id": 21,
+      "id": 22,
       "value": "Enova",
       "display": "Enova Energy"
     },
     {
-      "id": 22,
+      "id": 23,
       "value": "Ergon",
       "display": "Ergon Energy"
-    },
-    {
-      "id": 23,
-      "value": "Esperance",
-      "display": "Esperance"
     },
     {
       "id": 24,
@@ -213,91 +213,86 @@
     },
     {
       "id": 43,
-      "value": "People",
-      "display": "People Energy"
-    },
-    {
-      "id": 44,
       "value": "Powerclub",
       "display": "Powerclub"
     },
     {
-      "id": 45,
+      "id": 44,
       "value": "Powerdirect",
       "display": "Powerdirect"
     },
     {
-      "id": 46,
+      "id": 45,
       "value": "Powershop",
       "display": "Powershop"
     },
     {
-      "id": 47,
+      "id": 46,
       "value": "Q",
       "display": "Q Energy"
     },
     {
-      "id": 48,
+      "id": 47,
       "value": "Radian",
       "display": "Radian Energy"
     },
     {
-      "id": 49,
+      "id": 48,
       "value": "ReAmped",
       "display": "ReAmped Energy"
     },
     {
-      "id": 50,
+      "id": 49,
       "value": "Red",
       "display": "Red Energy"
     },
     {
-      "id": 51,
+      "id": 50,
       "value": "Rimfire",
       "display": "Rimfire Energy"
     },
     {
-      "id": 52,
+      "id": 51,
       "value": "Simply",
       "display": "Simply Energy"
     },
     {
-      "id": 53,
+      "id": 52,
       "value": "Smart",
       "display": "Smart Energy"
     },
     {
-      "id": 54,
+      "id": 53,
       "value": "Social",
       "display": "Social Energy"
     },
     {
-      "id": 55,
+      "id": 54,
       "value": "Sonnen",
       "display": "Sonnen"
     },
     {
-      "id": 56,
+      "id": 55,
       "value": "Sumo",
       "display": "Sumo"
     },
     {
-      "id": 57,
+      "id": 56,
       "value": "Synergy",
       "display": "Synergy"
     },
     {
-      "id": 58,
+      "id": 57,
       "value": "Tango",
       "display": "Tango Energy"
     },
     {
-      "id": 59,
+      "id": 58,
       "value": "Telstra",
       "display": "Telstra Energy"
     },
     {
-      "id": 60,
+      "id": 59,
       "value": "Zen",
       "display": "Zen Power"
     }

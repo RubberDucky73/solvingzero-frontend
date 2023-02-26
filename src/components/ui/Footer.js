@@ -15,8 +15,8 @@ import {
 
 import NextLink from 'next/link';
 
-// import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
-// import { BiMailSend } from 'react-icons/bi';
+import { FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { MdMail } from 'react-icons/md';
 
 const SocialButton = ({ children, label, href }) => (
   <chakra.button
@@ -74,14 +74,17 @@ export default function LargeWithNewsletter() {
             </Box>
             <Text fontSize="sm">© 2023 SolvingZero. All rights reserved</Text>
             <Stack direction="row" spacing={6}>
-              <SocialButton label="Twitter" href="#">
-                X
+              <SocialButton
+                label="Twitter"
+                href="https://twitter.com/SolvingZero"
+              >
+                <FaTwitter />
               </SocialButton>
-              <SocialButton label="YouTube" href="#">
-                O
-              </SocialButton>
-              <SocialButton label="Instagram" href="#">
-                B
+              <SocialButton
+                label="Linkedin"
+                href="https://www.linkedin.com/company/solving-zero"
+              >
+                <FaLinkedin />
               </SocialButton>
             </Stack>
           </Stack>
@@ -109,13 +112,13 @@ export default function LargeWithNewsletter() {
                 }}
               />
               <IconButton
-                bg={useColorModeValue('green.400', 'green.800')}
-                color={useColorModeValue('white', 'gray.800')}
+                bg="green.400"
+                color="white"
                 _hover={{
                   bg: 'green.600',
                 }}
                 aria-label="Subscribe"
-                icon="WW"
+                icon={<MdMail />}
               />
             </Stack>
           </Stack>

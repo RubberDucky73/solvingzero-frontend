@@ -78,7 +78,7 @@ export default function Home() {
           <GridItem
             gridRow={{ base: '4', md: '3' }}
             gridColumn={{ base: '1', md: '1 / 3' }}
-            background="gray.50"
+            background="white"
             mt={{ base: '125px', lg: '0px' }}
           >
             <ProblemSection />
@@ -86,7 +86,7 @@ export default function Home() {
           <GridItem
             gridRow={{ base: '5', md: '4' }}
             gridColumn={{ base: '1', md: '1 / 3' }}
-            backgroundColor="gray.50"
+            backgroundColor="white"
             minH="50px"
             maxH="150px"
           />

@@ -20,6 +20,7 @@ import jsonData from '../data/companyHeroData.json';
 import { db } from '../firebase/config';
 import { ratesFormat, RenderIf } from '../utils/utils';
 import PostcodeSearch from './PostcodeSearch';
+import SignUpModal from './SignUpModal';
 
 // Aussie and HasApp display the relative data about Aussie owned and Apps
 function Aussie({ aussie }) {
@@ -197,18 +198,21 @@ export default function BestPlans({ postcode }) {
                 base: '1',
                 md: 'repeat(12, minmax(50px, 1fr));',
               }}
-              gap={4}
+              gap={3}
               bg="white"
               border="2px"
               borderColor="gray.50"
               shadow="md"
               mt={{ base: '50px', md: '20px' }}
-              py="30px"
-              px={{ base: '20px', md: '30px' }}
+              py="20px"
+              px={{ base: '20px', md: '20px' }}
               rounded="2xl"
             >
               {/* The company Logo */}
-              <Grid gridRow="1 / span 2" columnGap={{ md: '10px' }}>
+              <Grid
+                gridRow="1 / span 2"
+                columnGap={{ base: '0px', md: '10px' }}
+              >
                 <GridItem
                   gridColumn="1"
                   gridRow="1 / span 2"
@@ -233,6 +237,7 @@ export default function BestPlans({ postcode }) {
                   alignSelf="center"
                   fontWeight="semibold"
                   fontSize="xl"
+                  ml={{ base: '0px', md: '17px' }}
                 >
                   {`${ele.data.brandName} `}
                 </GridItem>
@@ -274,6 +279,7 @@ export default function BestPlans({ postcode }) {
                 gridColumnStart={{ base: '1', md: '3' }}
                 gridColumnEnd={{ base: '1', md: '8' }}
                 gridrow={{ base: '3', md: '3' }}
+                mr={{ md: '10px' }}
               >
                 <Grid
                   minW="max-content"
@@ -352,25 +358,7 @@ export default function BestPlans({ postcode }) {
                 mt="0px"
               >
                 <Flex justifyContent={{ base: 'center' }}>
-                  <Button
-                    minW="100%"
-                    border="2px"
-                    borderColor="blue.300"
-                    bg="blue.300"
-                    color="white"
-                    fontWeight="bold"
-                    boxShadow="md"
-                    mb={{ base: '40px', md: '0px' }}
-                    mt={{ base: '45px', md: '10px' }}
-                    _hover={{
-                      color: 'blue.500',
-                      bg: 'white',
-                      border: '2px',
-                      borderColor: 'blue.500',
-                    }}
-                  >
-                    Choose Plan
-                  </Button>
+                  <SignUpModal />
                 </Flex>
               </GridItem>
 
@@ -405,8 +393,9 @@ export default function BestPlans({ postcode }) {
       );
     }
     return (
-      <Heading as="h3" fontSize="md" fontWeight="semibold" mt="35px">
-        Sorry, there are no plans available
+      <Heading as="h3" fontSize="md" fontWeight="semibold" mt="45px">
+        Hello, either you need to enter your criteria above or there are no
+        plans available for your search
       </Heading>
     );
   };
@@ -432,10 +421,10 @@ export default function BestPlans({ postcode }) {
   };
   return (
     <Grid>
-      <Box>
+      <Box minW="100%" px={{ base: '5', md: '50px' }} mx="0">
         <PostcodeSearch postCode={postcode} />
       </Box>
-      {renderList()}
+      <GridItem mx={{ base: '10px', md: '50px' }}>{renderList()}</GridItem>
     </Grid>
   );
 }

@@ -5,7 +5,6 @@ import { useRouter } from 'next/router';
 import { useState } from 'react';
 
 import {
-  Box,
   Button,
   Input,
   Flex,
@@ -75,7 +74,7 @@ export default function PostcodeSearch({ sendTo, postCode }) {
                   borderColor: 'gray.400',
                 }}
               />
-              <AutoCompleteList maxW="419px" minW="415px" mt="0">
+              <AutoCompleteList maxW="419px" mt="0">
                 {companies.map((data) => (
                   <AutoCompleteItem
                     key={`option-${data.id}`}
@@ -155,11 +154,11 @@ export default function PostcodeSearch({ sendTo, postCode }) {
             </Link>
           ) : (
             <Button
-              size="md"
+              size={{ base: 'md', lg: 'lg' }}
               fontWeight="bold"
-              px={{ base: '5', md: '6' }}
+              px={{ base: '4', md: '6' }}
               ml={{ base: '10px', md: '20px' }}
-              mt={{ base: '25px', md: '35px' }}
+              mt={{ base: '25px', md: '30px' }}
               bg="green.400"
               color="white"
               _hover={{

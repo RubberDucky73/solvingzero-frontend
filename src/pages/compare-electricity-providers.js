@@ -10,7 +10,7 @@ const GreenEnergy = () => {
   return (
     <>
       <Navbar />
-      <Box px={{ base: '15px', md: '40px' }} minH="70vh">
+      <Box px={{ base: '0px', md: '30px' }} minH="70vh">
         <BestPlans postcode={postcode} />
       </Box>
       <Footer />
