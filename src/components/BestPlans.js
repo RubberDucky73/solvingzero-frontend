@@ -13,14 +13,18 @@ import {
 } from '@chakra-ui/react';
 import { collectionGroup, getDocs, query, where } from 'firebase/firestore';
 import { useEffect, useState } from 'react';
+
 import { MdPhonelinkErase, MdSmartphone } from 'react-icons/md';
 import { GiAustralia } from 'react-icons/gi';
 import { BiWorld } from 'react-icons/bi';
+// import { QuestionOutlineIcon } from '@chakra-ui/icons';
+
 import jsonData from '../data/companyHeroData.json';
 import { db } from '../firebase/config';
 import { ratesFormat, RenderIf } from '../utils/utils';
 import PostcodeSearch from './PostcodeSearch';
 import SignUpModal from './SignUpModal';
+import ToolTips from './ToolTips';
 
 // Aussie and HasApp display the relative data about Aussie owned and Apps
 function Aussie({ aussie }) {
@@ -71,6 +75,7 @@ function HasApp({ ownApp }) {
     } else {
       setHasApp('No App');
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (hasApp === 'Has an App') {
@@ -275,59 +280,66 @@ export default function BestPlans({ postcode }) {
               </Grid>
 
               {/* Pricing Below */}
-              <GridItem
+              <Grid
+                minW="max-content"
                 gridColumnStart={{ base: '1', md: '3' }}
                 gridColumnEnd={{ base: '1', md: '8' }}
                 gridrow={{ base: '3', md: '3' }}
+                bgGradient="linear(to-t, yellow.200, yellow.100)"
+                shadow="2xl"
+                rounded="lg"
                 mr={{ md: '10px' }}
+                minH="150px"
               >
+                {/* The yearly price */}
                 <Grid
-                  minW="max-content"
-                  // gridColumnStart={{ base: '1', md: '3' }}
-                  // gridColumnEnd={{ base: '1', md: '8' }}
-                  // gridrow={{ base: '3', md: '2 / span 1' }}
-                  bgGradient="linear(to-t, yellow.200, yellow.100)"
-                  shadow="2xl"
-                  rounded="lg"
+                  gridRow="1"
+                  gridColumn="1"
+                  py="15px"
+                  px="30px"
+                  gridTemplateColumns="min-content max-content"
                 >
-                  {/* The yearly price */}
-                  <GridItem gridRow="1" gridColumn="1">
-                    <Heading
-                      as="h2"
-                      fontSize={{ base: 'lg', md: '2xl' }}
-                      py="15px"
-                      px="30px"
-                    >
-                      {`$${Math.round(ele.yearlyPrice / 100)} per year`}
+                  <GridItem gridRow="1">
+                    <Heading as="h2" fontSize={{ base: 'lg', md: '3xl' }}>
+                      {`$${Math.round(ele.yearlyPrice / 100)}`}
                     </Heading>
                   </GridItem>
-                  {/* <GridItem gridRow="1" gridColumn="2" py="15px" px="30px">
-                  <Text>{`$${
-                    Math.round(ele.yearlyPrice / 100) / 12
-                  } per month`}</Text>
-                </GridItem> */}
-                  {/* Daily supply cost */}
-                  <GridItem px="30px">
-                    {`Daily charge (supply cost): ${
-                      Math.round(
-                        100 *
-                          ele.data.electricityContract.tariffPeriod[0]
-                            .dailySupplyCharges
-                      ) / 100
-                    }¢`}
-                  </GridItem>
-                  {/* Unit of kwh cost */}
-                  <GridItem px="30px" pb="30px">
-                    {`Price for each Kwh: ${(
-                      Math.round(
-                        100 *
-                          ele.data.electricityContract.tariffPeriod[0]
-                            .singleRate.rates?.[0].unitPrice
-                      ) / 100
-                    ).toFixed(2)}¢`}
+                  <GridItem gridRow="1" alignSelf="start" mt="10px" ml="10px">
+                    <Text fontSize="md">/ year</Text>
                   </GridItem>
                 </Grid>
-              </GridItem>
+                {/* The Daily Supply Charge */}
+                <GridItem
+                  gridColumn="1"
+                  px="30px"
+                  pb="5px"
+                  fontWeight="semibold"
+                  maxH="15px"
+                >
+                  {`Daily charge: ${
+                    Math.round(
+                      100 *
+                        ele.data.electricityContract.tariffPeriod[0]
+                          .dailySupplyCharges
+                    ) / 100
+                  }¢`}
+                </GridItem>
+                {/* Unit of kwh cost */}
+                <GridItem
+                  gridColumn="1"
+                  px="30px"
+                  pb="5px"
+                  fontWeight="semibold"
+                >
+                  {`Price per Kwh: ${(
+                    Math.round(
+                      100 *
+                        ele.data.electricityContract.tariffPeriod[0].singleRate
+                          .rates?.[0].unitPrice
+                    ) / 100
+                  ).toFixed(2)}¢`}
+                </GridItem>
+              </Grid>
 
               {/* Green Rating Below */}
               <Grid
@@ -339,17 +351,24 @@ export default function BestPlans({ postcode }) {
                 shadow="2xl"
                 rounded="lg"
                 mt={{ base: '10px', md: '0px' }}
+                minH="150px"
               >
                 <GridItem>
                   <EmissionsTotal ele={ele.tonnesMwh} />
                 </GridItem>
-                <GridItem px="30px">{`Comapny Green Rating: ${(
-                  Math.round(ele.greenRating * 2) / 2
-                ).toFixed(1)}`}</GridItem>
                 <GridItem
                   px="30px"
-                  pb="30px"
-                >{`Tonnes of carbon per MWh: ${ele.tonnesMwh}`}</GridItem>
+                  pb="5px"
+                  fontWeight="semibold"
+                  maxH="15px"
+                >{`Tonnes of CO2: ${ele.tonnesMwh}`}</GridItem>
+                <GridItem
+                  px="30px"
+                  pb="5px"
+                  fontWeight="semibold"
+                >{`Comapny Green Rating: ${(
+                  Math.round(ele.greenRating * 2) / 2
+                ).toFixed(1)}`}</GridItem>
               </Grid>
               <GridItem
                 gridRow={{ base: '6', md: '4' }}
@@ -421,10 +440,27 @@ export default function BestPlans({ postcode }) {
   };
   return (
     <Grid>
-      <Box minW="100%" px={{ base: '5', md: '50px' }} mx="0">
-        <PostcodeSearch postCode={postcode} />
-      </Box>
-      <GridItem mx={{ base: '10px', md: '50px' }}>{renderList()}</GridItem>
+      <Grid gridTemplateColumns={{ md: '500px 500px' }}>
+        <GridItem minW="min-content" pl={{ base: '5', md: '50px' }} mx="0">
+          <PostcodeSearch postCode={postcode} />
+        </GridItem>
+        <GridItem
+          gridColumn={{ base: '1', md: '2' }}
+          placeSelf="center"
+          ml={{ base: '25px', md: '50px' }}
+          mt={{ base: '20px', md: '30px' }}
+        >
+          <ToolTips />
+          <Text mt="30px">
+            All the data is based on a home using 11Kwh a day (4000 Kwh/year).
+            If you'd like an option to customise and filter this data, let me
+            know!
+          </Text>
+        </GridItem>
+      </Grid>
+      <GridItem gridColumn="1 / span 2" mx={{ base: '10px', md: '50px' }}>
+        {renderList()}
+      </GridItem>
     </Grid>
   );
 }

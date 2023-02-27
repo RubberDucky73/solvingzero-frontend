@@ -50,14 +50,13 @@ export default function PostcodeSearch({ sendTo, postCode }) {
   };
 
   return (
-    <Grid>
+    <Grid maxW={{ lg: '0px' }}>
       <GridItem GridRow="1">
-        <Flex maxW="419px" mt="35px" mb="10px">
+        <Flex maxW="min-content" mt="35px" mb="10px">
           <FormControl
-            w="60"
             bg="white"
-            maxW="419px"
-            minW={{ base: '325px', md: '325px', lg: '420px' }}
+            maxW="410px"
+            minW={{ base: '325px', md: '325px', lg: '410px' }}
           >
             <AutoComplete openOnFocus maxW="419px">
               <AutoCompleteInput
@@ -156,9 +155,10 @@ export default function PostcodeSearch({ sendTo, postCode }) {
             <Button
               size={{ base: 'md', lg: 'lg' }}
               fontWeight="bold"
-              px={{ base: '4', md: '6' }}
+              px={{ base: '0px', md: '6' }}
               ml={{ base: '10px', md: '20px' }}
               mt={{ base: '25px', md: '30px' }}
+              mr={{ base: '10px' }}
               bg="green.400"
               color="white"
               _hover={{

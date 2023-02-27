@@ -47,7 +47,7 @@ export default function SignUpModal() {
         <ModalOverlay backdropFilter="blur(2px)" />
         <ModalContent mx={{ base: '10px', md: '0px' }}>
           <ModalHeader maxW="90%" pb="3px">
-            We use your basic info to verify with the energy provider
+            Your basic info is only used to confirm switching plans
           </ModalHeader>
           <Text pl="25px" color="gray.400">
             No spam, we swear
