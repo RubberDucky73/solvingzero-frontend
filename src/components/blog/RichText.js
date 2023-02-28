@@ -14,6 +14,7 @@ const options = {
   renderNode: {
     [BLOCKS.PARAGRAPH]: (node, children) => {
       if (
+        // eslint-disable-next-line react/destructuring-assignment
         node.content.find((item) =>
           item.marks?.find((mark) => mark.type === 'code')
         )
@@ -31,6 +32,7 @@ const options = {
     },
 
     [INLINES.ENTRY_HYPERLINK]: (node) => {
+      // eslint-disable-next-line react/destructuring-assignment
       if (node.data.target.sys.contentType.sys.id === 'post') {
         return (
           <Link href={`/article/${node.data.target.fields.slug}`}>

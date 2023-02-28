@@ -6,12 +6,12 @@ import Footer from '../components/ui/Footer';
 
 const GreenEnergy = () => {
   const router = useRouter();
-  const { postcode } = router.query;
+  const { postcode, company } = router.query;
   return (
     <>
       <Navbar />
       <Box px={{ base: '0px', md: '30px' }} minH="70vh">
-        <BestPlans postcode={postcode} />
+        <BestPlans postcode={postcode} company={company} />
       </Box>
       <Footer />
     </>
