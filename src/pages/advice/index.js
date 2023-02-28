@@ -22,7 +22,6 @@ export async function getStaticProps() {
 }
 
 export default function Articles({ articles }) {
-  console.log(articles);
   return (
     <>
       <Navbar />

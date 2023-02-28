@@ -168,9 +168,10 @@ const FeesList = (fees) => {
             fontSize="md"
           >{`${e?.type}`}</Heading>
         </GridItem>
-        <GridItem fontWeight="medium">{`$${(
-          Math.round(100 * e?.amount) / 100
-        ).toFixed(2)}`}</GridItem>
+        <GridItem fontWeight="medium">{`$${
+          // eslint-disable-next-line no-unsafe-optional-chaining
+          (Math.round(100 * e?.amount) / 100).toFixed(2)
+        }`}</GridItem>
         <GridItem>
           <RenderIf value={e.rate}>
             {(rate) => <Text>{`${ratesFormat(rate)}`}</Text>}
@@ -185,10 +186,11 @@ const FeesList = (fees) => {
   return null;
 };
 
-export default function BestPlans({ postcode }) {
+export default function BestPlans({ postcode, company }) {
   const [bestPlansState, setBestPlans] = useState(null);
-
   const [loading, setLoading] = useState(true);
+  const [emptyState, setEmptyState] = useState(false);
+
   const renderList = () => {
     if (bestPlansState?.length && !loading) {
       return bestPlansState?.map((ele) => {
@@ -284,7 +286,7 @@ export default function BestPlans({ postcode }) {
                 minW="max-content"
                 gridColumnStart={{ base: '1', md: '3' }}
                 gridColumnEnd={{ base: '1', md: '8' }}
-                gridrow={{ base: '3', md: '3' }}
+                gridRow={{ base: '3', md: '3' }}
                 bgGradient="linear(to-t, yellow.200, yellow.100)"
                 shadow="2xl"
                 rounded="lg"
@@ -334,6 +336,7 @@ export default function BestPlans({ postcode }) {
                   {`Price per Kwh: ${(
                     Math.round(
                       100 *
+                        // eslint-disable-next-line no-unsafe-optional-chaining
                         ele.data.electricityContract.tariffPeriod[0].singleRate
                           .rates?.[0].unitPrice
                     ) / 100
@@ -346,7 +349,7 @@ export default function BestPlans({ postcode }) {
                 minW="max-content"
                 gridColumnStart={{ base: '1', md: '8' }}
                 gridColumnEnd={{ base: '1', md: '13' }}
-                gridrow={{ base: '4', md: '3' }}
+                gridRow={{ base: '4', md: '3' }}
                 bgGradient="linear(to-t, green.200, green.100)"
                 shadow="2xl"
                 rounded="lg"
@@ -377,7 +380,13 @@ export default function BestPlans({ postcode }) {
                 mt="0px"
               >
                 <Flex justifyContent={{ base: 'center' }}>
-                  <SignUpModal />
+                  <SignUpModal
+                    planId={ele.id}
+                    price={ele.yearlyPrice / 100}
+                    companyChosen={ele.data.brandName}
+                    companyFrom={company}
+                    postCode={postcode}
+                  />
                 </Flex>
               </GridItem>
 
@@ -411,6 +420,13 @@ export default function BestPlans({ postcode }) {
         </Flex>
       );
     }
+    if (emptyState) {
+      return (
+        <Heading as="h3" fontSize="md" fontWeight="semibold" mt="45px">
+          Here it goes the empty state
+        </Heading>
+      );
+    }
     return (
       <Heading as="h3" fontSize="md" fontWeight="semibold" mt="45px">
         Hello, either you need to enter your criteria above or there are no
@@ -419,7 +435,13 @@ export default function BestPlans({ postcode }) {
     );
   };
   useEffect(() => {
-    fetchPlans(postcode);
+    if (postcode === undefined) {
+      setLoading(false);
+      setEmptyState(true);
+    } else {
+      setEmptyState(false);
+      fetchPlans(postcode);
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [postcode]);
 
@@ -445,7 +467,7 @@ export default function BestPlans({ postcode }) {
         mb={{ base: '10px', md: '30px', lg: '40px' }}
       >
         <GridItem minW="min-content" pl={{ base: '5', md: '50px' }} mx="0">
-          <PostcodeSearch postCode={postcode} />
+          <PostcodeSearch postCode={postcode} company={company} />
         </GridItem>
         <GridItem
           gridRow="1"

@@ -24,25 +24,19 @@ import jsonData from '../data/energyCompanies.json';
 
 const { companies } = jsonData;
 
-export default function PostcodeSearch({ sendTo, postCode }) {
-  console.log('SEND TO ', sendTo);
+export default function PostcodeSearch({ sendTo, postCode, company }) {
   const [postCodeState, setPostCode] = useState(postCode);
-  // const [name, setName] = useState();
+  const [companyState, setCompany] = useState(company);
 
   const router = useRouter();
 
   function handleChangePostCode() {
-    router.replace(
-      {
-        query: {
-          postcode: postCodeState,
-        },
+    router.replace({
+      query: {
+        company: companyState,
+        postcode: postCodeState,
       },
-      undefined,
-      {
-        shallow: true,
-      }
-    );
+    });
   }
 
   const handleChangepostcode = (e) => {
@@ -58,8 +52,14 @@ export default function PostcodeSearch({ sendTo, postCode }) {
             maxW="410px"
             minW={{ base: '325px', md: '325px', lg: '410px' }}
           >
-            <AutoComplete openOnFocus maxW="419px">
+            <AutoComplete
+              openOnFocus
+              maxW="419px"
+              onChange={(e) => setCompany(e)}
+              value={companyState}
+            >
               <AutoCompleteInput
+                value={companyState}
                 placeholder="Search for your current provider"
                 _placeholder={{ opacity: 1, color: 'green.700' }}
                 size={{ base: 'md', md: 'md', lg: 'lg' }}
@@ -117,12 +117,11 @@ export default function PostcodeSearch({ sendTo, postCode }) {
             <Link
               href={{
                 pathname: '/compare-electricity-providers',
-                query: { postcode: postCodeState },
+                query: { postcode: postCodeState, company: companyState },
               }}
               legacyBehavior
             >
               <Button
-                onClick={() => console.log('asdasdasd')}
                 type="primary"
                 htmlType="submit"
                 maxW="200px"

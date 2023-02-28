@@ -1,5 +1,4 @@
 import {
-  Text,
   Button,
   FormControl,
   FormLabel,
@@ -11,15 +10,68 @@ import {
   ModalFooter,
   ModalHeader,
   ModalOverlay,
+  Text,
   useDisclosure,
 } from '@chakra-ui/react';
-import React from 'react';
+import React, { useState } from 'react';
+import { collection, addDoc } from 'firebase/firestore';
+import { db } from '../firebase/config';
+import PostcodeSearch from './PostcodeSearch';
 
-export default function SignUpModal() {
+export default function SignUpModal({
+  companyFrom,
+  postCode,
+  planId,
+  companyChosen,
+  price,
+}) {
   const { isOpen, onOpen, onClose } = useDisclosure();
-
+  const dbInstance = collection(db, 'users');
   const initialRef = React.useRef(null);
+  const [loading, setLoading] = useState(false);
+  const [userInfo, setUserInfo] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    companyFrom,
+    planId,
+    price,
+    postCode,
+    companyChosen,
+  });
 
+  const handleInputChange = (e, type) => {
+    setUserInfo((user) => ({
+      ...user,
+      [type]: e.target.value,
+    }));
+  };
+
+  const saveUser = () => {
+    setLoading(true);
+    addDoc(dbInstance, {
+      firstName: userInfo.firstName,
+      lastName: userInfo.lastName,
+      email: userInfo.email,
+      companyFrom: userInfo.companyFrom,
+      planId: userInfo.planId,
+      price: userInfo.price,
+      postCode: userInfo.postCode,
+      companyChosen: userInfo.companyChosen,
+    }).then(() => {
+      setLoading(false);
+      setUserInfo({
+        firstName: '',
+        lastName: '',
+        email: '',
+        companyFrom: '',
+        planId: '',
+        price: '',
+        postCode: '',
+        companyChosen: '',
+      });
+    });
+  };
   return (
     <>
       <Button
@@ -55,22 +107,38 @@ export default function SignUpModal() {
           <ModalBody pb={6} pt={7}>
             <FormControl>
               <FormLabel>First name</FormLabel>
-              <Input ref={initialRef} placeholder="First name" />
+              <Input
+                value={userInfo.firstName}
+                onChange={(e) => handleInputChange(e, 'firstName')}
+                ref={initialRef}
+                placeholder="First name"
+              />
             </FormControl>
 
             <FormControl mt={4}>
               <FormLabel>Last name</FormLabel>
-              <Input placeholder="Last name" />
+              <Input
+                value={userInfo.lastName}
+                onChange={(e) => handleInputChange(e, 'lastName')}
+                placeholder="Last name"
+              />
             </FormControl>
 
             <FormControl mt={4}>
               <FormLabel>Email</FormLabel>
-              <Input placeholder="Email address" />
+              <Input
+                value={userInfo.email}
+                onChange={(e) => handleInputChange(e, 'email')}
+                placeholder="Email address"
+              />
             </FormControl>
           </ModalBody>
 
           <ModalFooter>
             <Button
+              // disabled={loading || userInfo.email === ''}
+              isLoading={loading}
+              onClick={saveUser}
               size="md"
               fontWeight="bold"
               px={{ base: '5', md: '6' }}
