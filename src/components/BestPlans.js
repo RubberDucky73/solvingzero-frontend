@@ -42,10 +42,10 @@ function Aussie({ aussie }) {
     return (
       <Flex fontWeight="semibold" color="green.600">
         <Grid>
-          <GridItem gridRow="1" maxW="wrap" mr="2px" alignSelf="center">
+          <GridItem gridrow="1" maxW="wrap" mr="2px" alignSelf="center">
             <GiAustralia />
           </GridItem>
-          <GridItem gridRow="1" maxW="max-content" placeSelf="center">
+          <GridItem gridrow="1" maxW="max-content" placeSelf="center">
             {aussieOwned}
           </GridItem>
         </Grid>
@@ -55,10 +55,10 @@ function Aussie({ aussie }) {
   return (
     <Flex fontWeight="semibold" color="red.500">
       <Grid>
-        <GridItem gridRow="1" maxW="wrap" mr="2px" alignSelf="center">
+        <GridItem gridrow="1" maxW="wrap" mr="2px" alignSelf="center">
           <BiWorld />
         </GridItem>
-        <GridItem gridRow="1" maxW="max-content" placeSelf="center">
+        <GridItem gridrow="1" maxW="max-content" placeSelf="center">
           {aussieOwned}
         </GridItem>
       </Grid>
@@ -82,10 +82,10 @@ function HasApp({ ownApp }) {
     return (
       <Flex fontWeight="semibold" color="green.600">
         <Grid>
-          <GridItem gridRow="1" maxW="wrap" mr="2px" alignSelf="center">
+          <GridItem gridrow="1" maxW="wrap" mr="2px" alignSelf="center">
             <MdSmartphone />
           </GridItem>
-          <GridItem gridRow="1" maxW="max-content" placeSelf="center">
+          <GridItem gridrow="1" maxW="max-content" placeSelf="center">
             {hasApp}
           </GridItem>
         </Grid>
@@ -95,10 +95,10 @@ function HasApp({ ownApp }) {
   return (
     <Flex fontWeight="semibold" color="red.500">
       <Grid>
-        <GridItem gridRow="1" maxW="wrap" mr="2px" alignSelf="center">
+        <GridItem gridrow="1" maxW="wrap" mr="2px" alignSelf="center">
           <MdPhonelinkErase />
         </GridItem>
-        <GridItem gridRow="1" maxW="max-content" placeSelf="center">
+        <GridItem gridrow="1" maxW="max-content" placeSelf="center">
           {hasApp}
         </GridItem>
       </Grid>
@@ -160,7 +160,7 @@ function FeesButton({ plans }) {
 const FeesList = (fees) => {
   if (fees) {
     return fees?.plans?.map((e) => (
-      <Grid minW="250px" mb="30px" mt="20px" gridRowGap="5px">
+      <Grid minW="250px" mb="30px" mt="20px" gridrowGap="5px">
         <GridItem>
           <Heading
             color="green.900"
@@ -189,8 +189,8 @@ const FeesList = (fees) => {
 export default function BestPlans({ postcode, company }) {
   const [bestPlansState, setBestPlans] = useState(null);
   const [loading, setLoading] = useState(true);
-  console.log(company);
   const [emptyState, setEmptyState] = useState(false);
+
   const renderList = () => {
     if (bestPlansState?.length && !loading) {
       return bestPlansState?.map((ele) => {
@@ -217,12 +217,12 @@ export default function BestPlans({ postcode, company }) {
             >
               {/* The company Logo */}
               <Grid
-                gridRow="1 / span 2"
+                gridrow="1 / span 2"
                 columnGap={{ base: '0px', md: '10px' }}
               >
                 <GridItem
                   gridColumn="1"
-                  gridRow="1 / span 2"
+                  gridrow="1 / span 2"
                   minH="50px"
                   minW="110px"
                   justifySelf={{ base: 'center' }}
@@ -239,7 +239,7 @@ export default function BestPlans({ postcode, company }) {
                 {/* Name of the company */}
                 <GridItem
                   gridColumn={{ base: '1', md: '3 / span 1' }}
-                  gridRow={{ base: '4', md: '1 / span 2' }}
+                  gridrow={{ base: '4', md: '1 / span 2' }}
                   minW="max-content"
                   alignSelf="center"
                   fontWeight="semibold"
@@ -252,7 +252,7 @@ export default function BestPlans({ postcode, company }) {
                 <GridItem
                   minW="max-content"
                   gridColumn={{ base: '1', md: '5 / span 1' }}
-                  gridRow={{ base: '5', md: '1 / span 2' }}
+                  gridrow={{ base: '5', md: '1 / span 2' }}
                   alignSelf="center"
                   mt="5px"
                   color="gray.500"
@@ -262,7 +262,7 @@ export default function BestPlans({ postcode, company }) {
                 {/* Plan ID */}
                 <GridItem
                   gridColumn={{ base: '1', md: '6 / span 1' }}
-                  gridRow={{ base: '6', md: '1 / span 2' }}
+                  gridrow={{ base: '6', md: '1 / span 2' }}
                   alignSelf="center"
                   mt="5px"
                   color="gray.500"
@@ -274,10 +274,10 @@ export default function BestPlans({ postcode, company }) {
                 gridColumn={{ base: '1', md: '1 / span 2' }}
               >
                 <GridItem maxH="max-content" pb={{ base: '30px', md: '50px' }}>
-                  <HasApp gridRow="1" ownApp={ele.hasApp} />
+                  <HasApp gridrow="1" ownApp={ele.hasApp} />
                 </GridItem>
                 <GridItem maxH="max-content">
-                  <Aussie gridRow="2" aussie={ele.australian} />
+                  <Aussie gridrow="2" aussie={ele.australian} />
                 </GridItem>
               </Grid>
 
@@ -295,18 +295,18 @@ export default function BestPlans({ postcode, company }) {
               >
                 {/* The yearly price */}
                 <Grid
-                  gridRow="1"
+                  gridrow="1"
                   gridColumn="1"
                   py="15px"
                   px="30px"
                   gridTemplateColumns="min-content max-content"
                 >
-                  <GridItem gridRow="1">
+                  <GridItem gridrow="1">
                     <Heading as="h2" fontSize={{ base: 'lg', md: '3xl' }}>
                       {`$${Math.round(ele.yearlyPrice / 100)}`}
                     </Heading>
                   </GridItem>
-                  <GridItem gridRow="1" alignSelf="start" mt="10px" ml="10px">
+                  <GridItem gridrow="1" alignSelf="start" mt="10px" ml="10px">
                     <Text fontSize="md">/ year</Text>
                   </GridItem>
                 </Grid>
@@ -374,7 +374,7 @@ export default function BestPlans({ postcode, company }) {
                 ).toFixed(1)}`}</GridItem>
               </Grid>
               <GridItem
-                gridRow={{ base: '6', md: '4' }}
+                gridrow={{ base: '6', md: '4' }}
                 gridColumn={{ base: '1', md: '1 / span 2' }}
                 mb={{ base: '5px', md: '10px' }}
                 mt="0px"
@@ -388,7 +388,7 @@ export default function BestPlans({ postcode, company }) {
               {`${ele.greenPowerCalculated[0]}`}
             </GridItem> */}
               <Grid
-                gridRow={{ base: '7', md: '4' }}
+                gridrow={{ base: '7', md: '4' }}
                 gridColumnStart={{ base: '1', md: '1' }}
                 gridColumnEnd={{ base: '1', md: '13' }}
                 mt={{ md: '20px' }}
@@ -414,6 +414,13 @@ export default function BestPlans({ postcode, company }) {
         </Flex>
       );
     }
+    if (emptyState) {
+      return (
+        <Heading as="h3" fontSize="md" fontWeight="semibold" mt="45px">
+          Here it goes the empty state
+        </Heading>
+      );
+    }
     return (
       <Heading as="h3" fontSize="md" fontWeight="semibold" mt="45px">
         Hello, either you need to enter your criteria above or there are no
@@ -426,6 +433,7 @@ export default function BestPlans({ postcode, company }) {
       setLoading(false);
       setEmptyState(true);
     } else {
+      setEmptyState(false);
       fetchPlans(postcode);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps

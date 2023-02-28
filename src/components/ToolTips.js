@@ -128,7 +128,7 @@ export default function ToolTips() {
 //       </Text>
 //     </GridItem>
 // {
-/* <GridItem gridRow="2">
+/* <GridItem gridrow="2">
         <Button
           bgGradient="linear(to-t, yellow.200, yellow.100)"
           fontWeight="semibold"
@@ -145,7 +145,7 @@ export default function ToolTips() {
           Cost
         </Button>
       </GridItem>
-      <GridItem gridRow="2">
+      <GridItem gridrow="2">
         <Button
           bgGradient="linear(to-t, green.200, green.100)"
           fontWeight="semibold"
@@ -159,7 +159,7 @@ export default function ToolTips() {
           Emissions
         </Button>
       </GridItem>
-      <GridItem gridRow="2">
+      <GridItem gridrow="2">
         <Button
           bgGradient="linear(to-t, gray.200, gray.100)"
           fontWeight="semibold"

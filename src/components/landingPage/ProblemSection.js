@@ -17,7 +17,7 @@ export default function LandingCard() {
         <Grid minH="200px">
           <Heading
             as="h3"
-            gridRow="1"
+            gridrow="1"
             pt="15px"
             pb="30px"
             px="30px"
@@ -28,7 +28,7 @@ export default function LandingCard() {
             Affordable and greener
           </Heading>
           <Heading
-            gridRow="2"
+            gridrow="2"
             as="h2"
             fontSize={{ base: 'lg', md: '3xl' }}
             py="15px"
@@ -40,7 +40,7 @@ export default function LandingCard() {
             necessary*
           </Heading>
           <Text
-            gridRow="3"
+            gridrow="3"
             fontSize={{ base: 'md', md: 'lg' }}
             fontWeight="medium"
             py="15px"
@@ -60,7 +60,7 @@ export default function LandingCard() {
       <GridItem gridColumn="1">
         <Grid minH="200px">
           <Heading
-            gridRow="2"
+            gridrow="2"
             as="h2"
             fontSize={{ base: 'lg', md: '3xl' }}
             py="15px"
@@ -71,7 +71,7 @@ export default function LandingCard() {
             Energy to Aussie homes emit 630kgs of CO2 for every MWh
           </Heading>
           <Text
-            gridRow="3"
+            gridrow="3"
             fontSize={{ base: 'md', md: 'lg' }}
             fontWeight="medium"
             py="15px"
@@ -87,7 +87,7 @@ export default function LandingCard() {
       </GridItem>
       <GridItem
         gridColumn={{ base: '1', md: '2' }}
-        gridRow={{ base: '3', md: '1 / span 2' }}
+        gridrow={{ base: '3', md: '1 / span 2' }}
         placeSelf="center"
         mt={{ base: '50px' }}
         mb={{ base: '0px' }}

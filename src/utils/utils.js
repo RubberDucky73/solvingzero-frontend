@@ -9,7 +9,6 @@ export function ratesFormat(rate) {
 export function RenderIf({ value, fallback, children }) {
   if (value) {
     const localValue = typeof value === 'function' ? value() : value;
-    console.log('local value', value);
     if (localValue) {
       if (typeof children === 'function') {
         return <>{children(localValue)}</>;

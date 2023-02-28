@@ -51,7 +51,7 @@ export default function PostcodeSearch({ sendTo, postCode, company }) {
 
   return (
     <Grid maxW={{ lg: '0px' }}>
-      <GridItem GridRow="1">
+      <GridItem gridrow="1">
         <Flex maxW="min-content" mt="35px" mb="10px">
           <FormControl
             bg="white"
@@ -94,8 +94,8 @@ export default function PostcodeSearch({ sendTo, postCode, company }) {
           </FormControl>
         </Flex>
       </GridItem>
-      <Grid gridRow="2" maxW="max-content">
-        <GridItem gridRow="2" maxW="max-content" gridColumn="1">
+      <Grid gridrow="2" maxW="max-content">
+        <GridItem gridrow="2" maxW="max-content" gridColumn="1">
           <Input
             value={postCodeState}
             type="number"
@@ -118,7 +118,7 @@ export default function PostcodeSearch({ sendTo, postCode, company }) {
             }}
           />
         </GridItem>
-        <GridItem display="grid" gridRow="2" gridColumn="2" maxW="max-contnet">
+        <GridItem display="grid" gridrow="2" gridColumn="2" maxW="max-contnet">
           {sendTo ? (
             <Link
               href={{
@@ -130,7 +130,7 @@ export default function PostcodeSearch({ sendTo, postCode, company }) {
               <Button
                 onClick={() => console.log('asdasdasd')}
                 type="primary"
-                htmlType="submit"
+                htmltype="submit"
                 maxW="200px"
                 size={{ base: 'md', lg: 'lg' }}
                 mt={{ base: '25px', md: '30px', lg: '10px' }}
@@ -174,7 +174,7 @@ export default function PostcodeSearch({ sendTo, postCode, company }) {
                 borderColor: 'green.500',
               }}
               type="primary"
-              htmlType="submit"
+              htmltype="submit"
               onClick={() => handleChangePostCode()}
             >
               Calculate prices
