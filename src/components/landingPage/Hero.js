@@ -20,7 +20,7 @@ export default function CallToAction() {
       py={{ base: 14, md: 28 }}
       direction={{ base: 'column', md: 'row' }}
     >
-      <Grid gridrow="1" maxW="50%">
+      <Grid gridRow="1" maxW="50%">
         <GridItem>
           <Heading
             lineHeight={1.25}

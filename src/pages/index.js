@@ -41,7 +41,7 @@ export default function Home() {
           }}
         >
           <Grid
-            gridrow="1"
+            gridRow="1"
             gridColumn={{ base: '1', md: '1 / 3' }}
             gridTemplateColumns={{ base: '1', md: '1fr 1fr' }}
             gridTemplateRows={{
@@ -52,14 +52,14 @@ export default function Home() {
             justifySelf={{ lg: 'center' }}
           >
             <GridItem
-              gridrow={{ base: '1', md: '1' }}
+              gridRow={{ base: '1', md: '1' }}
               gridColumn={{ base: '1', md: '1 / 3' }}
               mx={{ base: '10%', md: '5%' }}
             >
               <Hero />
             </GridItem>
             <GridItem
-              gridrow={{ base: '2', md: '1' }}
+              gridRow={{ base: '2', md: '1' }}
               gridColumn={{ md: '2', lg: '2' }}
               position={{ base: 'relative', md: 'relative', lg: 'relative' }}
               top={{ base: '50px', md: '0', lg: '0' }}
@@ -68,7 +68,7 @@ export default function Home() {
               <HeroCarousel />
             </GridItem>
             <GridItem
-              gridrow={{ base: '3', md: '2' }}
+              gridRow={{ base: '3', md: '2' }}
               gridColumn={{ base: '1', md: '1 / 3' }}
               mt={{ base: '80px', lg: '145px' }}
             >
@@ -76,7 +76,7 @@ export default function Home() {
             </GridItem>
           </Grid>
           <GridItem
-            gridrow={{ base: '4', md: '3' }}
+            gridRow={{ base: '4', md: '3' }}
             gridColumn={{ base: '1', md: '1 / 3' }}
             background="white"
             mt={{ base: '125px', lg: '0px' }}
@@ -84,21 +84,21 @@ export default function Home() {
             <ProblemSection />
           </GridItem>
           <GridItem
-            gridrow={{ base: '5', md: '4' }}
+            gridRow={{ base: '5', md: '4' }}
             gridColumn={{ base: '1', md: '1 / 3' }}
             backgroundColor="white"
             minH="50px"
             maxH="150px"
           />
           <GridItem
-            gridrow={{ base: '5', md: '4' }}
+            gridRow={{ base: '5', md: '4' }}
             gridColumn={{ base: '1', md: '1 / 3' }}
             background="green.500"
             transform="skewY(-6deg)"
             minH={{ md: '600px' }}
           />
           <GridItem
-            gridrow={{ base: '5', md: '4' }}
+            gridRow={{ base: '5', md: '4' }}
             gridColumn={{ base: '1', md: '1 / 3' }}
             zIndex="1"
             mt="175px"
@@ -106,14 +106,14 @@ export default function Home() {
             <SolutionSection />
           </GridItem>
           <GridItem
-            gridrow={{ base: '6', md: '5' }}
+            gridRow={{ base: '6', md: '5' }}
             gridColumn={{ base: '1', md: '1 / 3' }}
             mt={{ base: '150px', md: '225px' }}
           >
             <InfoSection />
           </GridItem>
           <GridItem
-            gridrow={{ base: '7', md: '6' }}
+            gridRow={{ base: '7', md: '6' }}
             gridColumn={{ base: '1', md: '1 / 3' }}
             mt={{ base: '90px', md: '175px' }}
           >

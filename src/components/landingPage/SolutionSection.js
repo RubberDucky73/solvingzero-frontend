@@ -14,12 +14,12 @@ export default function HeroProblem() {
     >
       <GridItem
         gridColumn={{ base: '1', md: '1' }}
-        gridrow={{ base: '1', md: '1' }}
+        gridRow={{ base: '1', md: '1' }}
       >
         <Grid shadow="2xl" rounded="lg" minH="200px">
           <Heading
             as="h3"
-            gridrow="1"
+            gridRow="1"
             py="20px"
             px="30px"
             fontSize="lg"
@@ -29,7 +29,7 @@ export default function HeroProblem() {
             Purpose built to find affordable green energy
           </Heading>
           <Heading
-            gridrow="2"
+            gridRow="2"
             as="h2"
             fontSize={{ base: 'lg', md: '3xl' }}
             py="15px"
@@ -39,7 +39,7 @@ export default function HeroProblem() {
             Green Rating
           </Heading>
           <Text
-            gridrow="3"
+            gridRow="3"
             fontSize={{ base: 'md', md: 'lg' }}
             fontWeight="semibold"
             py="15px"
@@ -67,7 +67,7 @@ export default function HeroProblem() {
       </GridItem>
       <GridItem
         gridColumn={{ base: '1', md: '2' }}
-        gridrow={{ base: '2', md: '1' }}
+        gridRow={{ base: '2', md: '1' }}
       >
         <Grid
           bgGradient="none"
@@ -77,7 +77,7 @@ export default function HeroProblem() {
         >
           <Heading
             as="h3"
-            gridrow="1"
+            gridRow="1"
             py="20px"
             px="30px"
             fontSize="lg"
@@ -87,7 +87,7 @@ export default function HeroProblem() {
             Using trusted goverment data
           </Heading>
           <Heading
-            gridrow="2"
+            gridRow="2"
             as="h2"
             fontSize={{ base: 'lg', md: '3xl' }}
             py="15px"
@@ -97,7 +97,7 @@ export default function HeroProblem() {
             Pricing
           </Heading>
           <Text
-            gridrow="3"
+            gridRow="3"
             fontSize={{ base: 'md', md: 'lg' }}
             fontWeight="semibold"
             py="15px"
