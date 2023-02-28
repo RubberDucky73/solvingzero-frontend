@@ -168,9 +168,10 @@ const FeesList = (fees) => {
             fontSize="md"
           >{`${e?.type}`}</Heading>
         </GridItem>
-        <GridItem fontWeight="medium">{`$${(
-          Math.round(100 * e?.amount) / 100
-        ).toFixed(2)}`}</GridItem>
+        <GridItem fontWeight="medium">{`$${
+          // eslint-disable-next-line no-unsafe-optional-chaining
+          (Math.round(100 * e?.amount) / 100).toFixed(2)
+        }`}</GridItem>
         <GridItem>
           <RenderIf value={e.rate}>
             {(rate) => <Text>{`${ratesFormat(rate)}`}</Text>}
@@ -185,10 +186,11 @@ const FeesList = (fees) => {
   return null;
 };
 
-export default function BestPlans({ postcode }) {
+export default function BestPlans({ postcode, company }) {
   const [bestPlansState, setBestPlans] = useState(null);
-
   const [loading, setLoading] = useState(true);
+  console.log(company);
+  const [emptyState, setEmptyState] = useState(false);
   const renderList = () => {
     if (bestPlansState?.length && !loading) {
       return bestPlansState?.map((ele) => {
@@ -334,6 +336,7 @@ export default function BestPlans({ postcode }) {
                   {`Price per Kwh: ${(
                     Math.round(
                       100 *
+                        // eslint-disable-next-line no-unsafe-optional-chaining
                         ele.data.electricityContract.tariffPeriod[0].singleRate
                           .rates?.[0].unitPrice
                     ) / 100
@@ -419,7 +422,12 @@ export default function BestPlans({ postcode }) {
     );
   };
   useEffect(() => {
-    fetchPlans(postcode);
+    if (postcode === undefined) {
+      setLoading(false);
+      setEmptyState(true);
+    } else {
+      fetchPlans(postcode);
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [postcode]);
 
@@ -442,7 +450,7 @@ export default function BestPlans({ postcode }) {
     <Grid>
       <Grid gridTemplateColumns={{ md: '500px 500px' }}>
         <GridItem minW="min-content" pl={{ base: '5', md: '50px' }} mx="0">
-          <PostcodeSearch postCode={postcode} />
+          <PostcodeSearch postCode={postcode} company={company} />
         </GridItem>
         <GridItem
           gridColumn={{ base: '1', md: '2' }}
