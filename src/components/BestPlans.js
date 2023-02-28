@@ -380,7 +380,13 @@ export default function BestPlans({ postcode, company }) {
                 mt="0px"
               >
                 <Flex justifyContent={{ base: 'center' }}>
-                  <SignUpModal />
+                  <SignUpModal
+                    planId={ele.id}
+                    price={ele.yearlyPrice / 100}
+                    companyChosen={ele.data.brandName}
+                    companyFrom={company}
+                    postCode={postcode}
+                  />
                 </Flex>
               </GridItem>
 
