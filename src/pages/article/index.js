@@ -21,7 +21,6 @@ export async function getStaticProps() {
 }
 
 export default function Articles({ articles }) {
-  console.log(articles);
   return (
     <Layout>
       <Container maxW="4xl">

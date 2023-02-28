@@ -41,14 +41,12 @@ export default function SignUpModal({
   });
 
   const handleInputChange = (e, type) => {
-    console.log(e.target.value, type);
     setUserInfo((user) => ({
       ...user,
       [type]: e.target.value,
     }));
   };
 
-  console.log(userInfo);
   const saveUser = () => {
     setLoading(true);
     addDoc(dbInstance, {

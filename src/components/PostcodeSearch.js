@@ -31,18 +31,12 @@ export default function PostcodeSearch({ sendTo, postCode, company }) {
   const router = useRouter();
 
   function handleChangePostCode() {
-    router.replace(
-      {
-        query: {
-          company: companyState,
-          postcode: postCodeState,
-        },
-      }
-      // undefined,
-      // {
-      //   shallow: true,
-      // }
-    );
+    router.replace({
+      query: {
+        company: companyState,
+        postcode: postCodeState,
+      },
+    });
   }
 
   const handleChangepostcode = (e) => {
@@ -128,7 +122,6 @@ export default function PostcodeSearch({ sendTo, postCode, company }) {
               legacyBehavior
             >
               <Button
-                onClick={() => console.log('asdasdasd')}
                 type="primary"
                 htmlType="submit"
                 maxW="200px"
