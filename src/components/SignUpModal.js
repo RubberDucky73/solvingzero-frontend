@@ -59,7 +59,7 @@ export default function SignUpModal({
       postCode: userInfo.postCode,
       companyChosen: userInfo.companyChosen,
     }).then(() => {
-      setLoading(true);
+      setLoading(false);
       setUserInfo({
         firstName: '',
         lastName: '',
