@@ -7,7 +7,6 @@ import { Container, Heading, Text, Box, Avatar, Grid } from '@chakra-ui/react';
 import dayjs from 'dayjs';
 // import RichText from '../../components/RichText';
 
-import Skeleton from '../../components/blog/ArticleSkeleton';
 import Navbar from '../../components/ui/Navbar';
 import Footer from '../../components/ui/Footer';
 
@@ -53,7 +52,6 @@ export async function getStaticProps({ params }) {
 }
 
 export default function Article({ article }) {
-  if (!article) return <Skeleton />;
   const { featuredImage, title, subHeading, author, date, articleBody } =
     article.fields;
   const formatDate = dayjs({ date }[0]).format('MMM DD, YYYY');
@@ -92,7 +90,6 @@ export default function Article({ article }) {
           </Box>
         </Grid>
         <Box
-          // maxW={{ base: '100%', md: '100%' }}
           minW={{ md: '{featuredImage.fields.file.details.image.width}' }}
           minH={{ md: '{featuredImage.fields.file.details.image.height}' }}
         >

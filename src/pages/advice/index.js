@@ -4,6 +4,7 @@ import { Container, Heading, SimpleGrid, Text } from '@chakra-ui/react';
 import AdviceCard from '../../components/blog/AdviceCard';
 import Navbar from '../../components/ui/Navbar';
 import Footer from '../../components/ui/Footer';
+import { RenderIf } from '../../utils/utils';
 
 export async function getStaticProps() {
   const client = createClient({
@@ -48,9 +49,13 @@ export default function Articles({ articles }) {
         justifyContent="center"
         justifyItems="center"
       >
-        {articles.map((article) => (
-          <AdviceCard key={article.sys.id} article={article} />
-        ))}
+        {articles.length
+          ? articles.map((article) => (
+              <RenderIf value={article.sys.id}>
+                <AdviceCard key={article.sys.id} article={article} />
+              </RenderIf>
+            ))
+          : null}
       </SimpleGrid>
       <Footer />
     </>

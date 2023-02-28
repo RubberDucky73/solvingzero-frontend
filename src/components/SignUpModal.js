@@ -12,7 +12,6 @@ import {
   ModalHeader,
   ModalOverlay,
   useDisclosure,
-  FormHelperText,
 } from '@chakra-ui/react';
 import React from 'react';
 

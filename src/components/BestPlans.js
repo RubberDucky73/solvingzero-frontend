@@ -440,25 +440,30 @@ export default function BestPlans({ postcode }) {
   };
   return (
     <Grid>
-      <Grid gridTemplateColumns={{ md: '500px 500px' }}>
+      <Grid
+        gridTemplateColumns={{ md: '1fr 1fr' }}
+        mb={{ base: '10px', md: '30px', lg: '40px' }}
+      >
         <GridItem minW="min-content" pl={{ base: '5', md: '50px' }} mx="0">
           <PostcodeSearch postCode={postcode} />
         </GridItem>
         <GridItem
+          gridRow="1"
           gridColumn={{ base: '1', md: '2' }}
           placeSelf="center"
           ml={{ base: '25px', md: '50px' }}
           mt={{ base: '20px', md: '30px' }}
+          mr={{ md: '15%', lg: '10%' }}
         >
           <ToolTips />
-          <Text mt="30px">
+          <Text mt="30px" mr="2%">
             All the data is based on a home using 11Kwh a day (4000 Kwh/year).
             If you'd like an option to customise and filter this data, let me
             know!
           </Text>
         </GridItem>
       </Grid>
-      <GridItem gridColumn="1 / span 2" mx={{ base: '10px', md: '50px' }}>
+      <GridItem gridColumn="1" mx={{ base: '10px', md: '50px', lg: '5%' }}>
         {renderList()}
       </GridItem>
     </Grid>

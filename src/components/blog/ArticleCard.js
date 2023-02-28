@@ -1,6 +1,5 @@
 import NextLink from 'next/link';
 import Image from 'next/image';
-
 import { Heading, Grid, GridItem, Text, Card, Link } from '@chakra-ui/react';
 
 export default function ArticleCard({ article }) {
@@ -29,8 +28,6 @@ export default function ArticleCard({ article }) {
         <GridItem mt="10px" mr="10px" mb="10px" ml="10px">
           <Text color="green.900">{blurb}</Text>
         </GridItem>
-        {/* <Text>by {author.fields.authorName}</Text> */}
-        {/* <p className="date">{date}</p> */}
         <GridItem mt="10px" mr="10px" mb="10px" ml="10px">
           <Link
             fontWeight="semibold"
