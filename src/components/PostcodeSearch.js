@@ -51,7 +51,7 @@ export default function PostcodeSearch({ sendTo, postCode, company }) {
 
   return (
     <Grid maxW={{ lg: '0px' }}>
-      <GridItem gridRow="1">
+      <GridItem GridRow="1">
         <Flex maxW="min-content" mt="35px" mb="10px">
           <FormControl
             bg="white"
