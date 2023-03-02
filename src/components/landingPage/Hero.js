@@ -55,7 +55,7 @@ export default function CallToAction() {
           position="absolute"
           overflow="hidden"
           top={{ base: '-10', md: '-205', lg: '-400' }}
-          left={{ md: '-10' }}
+          left={{ md: '150' }}
           zIndex={-1}
           opactity="0.1"
           filter="auto"
@@ -68,7 +68,7 @@ export default function CallToAction() {
           position="absolute"
           overflow="hidden"
           top={{ base: '-10', md: '-95', lg: '-100' }}
-          left={{ md: '-10' }}
+          left={{ md: '200' }}
           zIndex={-1}
           opactity="0.1"
           filter="auto"

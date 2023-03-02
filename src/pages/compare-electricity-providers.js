@@ -1,6 +1,6 @@
 import { Box } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
-import BestPlans from '../components/BestPlans';
+import BestPlans from '../components/cep/BestPlans';
 import Navbar from '../components/ui/Navbar';
 import Footer from '../components/ui/Footer';
 

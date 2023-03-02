@@ -39,7 +39,7 @@ const Layout = ({ children }) => (
       blur="90px"
       color={useColorModeValue('yellow.100', 'yellow.400')}
     />
-    {/* <Blob
+    <Blob
       w={{ base: '100%', md: 'min-content' }}
       h={{ base: '85vh', md: '60vh' }}
       position="absolute"
@@ -52,7 +52,7 @@ const Layout = ({ children }) => (
       blur="90px"
       maxW="50%"
       color={useColorModeValue('green.100', 'green.400')}
-    /> */}
+    />
   </>
 );
 

@@ -15,8 +15,8 @@ import {
 } from '@chakra-ui/react';
 import React, { useState } from 'react';
 import { collection, addDoc } from 'firebase/firestore';
-import { db } from '../firebase/config';
-import PostcodeSearch from './PostcodeSearch';
+import { db } from '../../firebase/config';
+// import PostcodeSearch from './PostcodeSearch';
 
 export default function SignUpModal({
   companyFrom,

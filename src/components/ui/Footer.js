@@ -90,15 +90,14 @@ export default function LargeWithNewsletter() {
           </Stack>
           <Stack align="flex-start">
             <ListHeader>Company</ListHeader>
-            <Link href="#">About us</Link>
-            <Link href="#">Contact us</Link>
-            <Link href="#">Careers</Link>
+            <Link href="/company/about">About us</Link>
+            <Link href="/company/contact">Contact us</Link>
+            <Link href="/company/careers">Careers</Link>
           </Stack>
           <Stack align="flex-start">
             <ListHeader>Support</ListHeader>
-            <Link href="#">Terms of Service</Link>
-            <Link href="#">Legal</Link>
-            <Link href="#">Privacy Policy</Link>
+            <Link href="/support/termsOfService">Terms of Service</Link>
+            <Link href="/support/PrivacyPolicy">Privacy Policy</Link>
           </Stack>
           <Stack align="flex-start">
             <ListHeader>Stay up to date</ListHeader>
@@ -115,7 +114,10 @@ export default function LargeWithNewsletter() {
                 bg="green.400"
                 color="white"
                 _hover={{
-                  bg: 'green.600',
+                  bg: 'white',
+                  color: 'green.400',
+                  border: '1px',
+                  borderColor: 'green.400',
                 }}
                 aria-label="Subscribe"
                 icon={<MdMail />}

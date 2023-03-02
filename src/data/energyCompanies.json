@@ -8,293 +8,333 @@
     {
       "id": 2,
       "value": "1st",
-      "display": "1st Energy"
+      "display": "1st Energy",
+      "image": "/CompanyLogos/1stEnergy.png"
     },
     {
       "id": 3,
       "value": "ActewAGL",
-      "display": "Actew AGL"
+      "display": "Actew AGL",
+      "image": "/CompanyLogos/ActewAgl.png"
     },
     {
       "id": 4,
       "value": "AGL",
-      "display": "AGL"
+      "display": "AGL",
+      "image": "/CompanyLogos/AGL.png"
     },
     {
       "id": 5,
       "value": "Alinta",
-      "display": "Alinta Energy"
+      "display": "Alinta Energy",
+      "image": "/CompanyLogos/AlintaEnergy.png"
     },
     {
       "id": 6,
       "value": "Amber",
-      "display": "Amber Electric"
+      "display": "Amber Electric",
+      "image": "/CompanyLogos/Amber.png"
     },
     {
       "id": 7,
       "value": "Arc",
-      "display": "Arc Energy"
+      "display": "Arc Energy",
+      "image": "/CompanyLogos/ArcEnergy.png"
     },
     {
       "id": 8,
       "value": "ArclineRACV",
-      "display": "Arcline by RACV"
+      "display": "Arcline by RACV",
+      "image": "/CompanyLogos/ArclineRacv.png"
     },
     {
       "id": 9,
       "value": "Aurora",
-      "display": "Aurora Energy"
+      "display": "Aurora Energy",
+      "image": "/CompanyLogos/Aurora.png"
     },
     {
       "id": 10,
       "value": "BlueNRG",
-      "display": "Blue NRG"
+      "display": "Blue NRG",
+      "image": "/CompanyLogos/BlueNrg.png"
     },
     {
       "id": 11,
       "value": "BrightSpark",
-      "display": "Bright Spark Power"
+      "display": "Bright Spark Power",
+      "image": "/CompanyLogos/BrightSparkPower.png"
     },
     {
       "id": 12,
-      "value": "Brighte",
-      "display": "Brighte"
+      "value": "Circular",
+      "display": "Circular Energy",
+      "image": "/CompanyLogos/CircularEnergy.png"
     },
     {
       "id": 13,
-      "value": "Circular",
-      "display": "Circular Energy"
+      "value": "CovaU",
+      "display": "CovaU",
+      "image": "/CompanyLogos/CovaU.png"
     },
     {
       "id": 14,
-      "value": "CovaU",
-      "display": "CovaU"
-    },
-    {
-      "id": 15,
       "value": "Diamond",
       "display": "Diamond Energy",
       "image": "/CompanyLogos/Diamond.png"
     },
     {
-      "id": 16,
+      "id": 15,
       "value": "Discover",
-      "display": "Discover Energy"
+      "display": "Discover Energy",
+      "image": "/CompanyLogos/DiscoverEnergy.png"
+    },
+    {
+      "id": 16,
+      "value": "Dodo",
+      "display": "Dodo Energy",
+      "image": "/CompanyLogos/Dodo.png"
     },
     {
       "id": 17,
-      "value": "Dodo",
-      "display": "Dodo Energy"
+      "value": "ElectricityBox",
+      "display": "Electricity in a box",
+      "image": "/CompanyLogos/EletricityInABox.png"
     },
     {
       "id": 18,
-      "value": "ElectricityBox",
-      "display": "Electricity in a box"
+      "value": "Elysian",
+      "display": "Elysian Energy",
+      "image": "/CompanyLogos/ElysianEnergy.png"
     },
     {
       "id": 19,
-      "value": "Elysian",
-      "display": "Elysian Energy"
+      "value": "EnergyAustralia",
+      "display": "Energy Australia",
+      "image": "/CompanyLogos/EnergyAus.png"
     },
     {
       "id": 20,
-      "value": "EnergyAustralia",
-      "display": "Energy Australia"
+      "value": "EnergyLocals",
+      "display": "Energy Locals",
+      "image": "/CompanyLogos/EnergyLocals.png"
+      
     },
     {
       "id": 21,
-      "value": "EnergyLocals",
-      "display": "Energy Locals"
+      "value": "Enova",
+      "display": "Enova Energy",
+      "image": "/CompanyLogos/Enova.png"
     },
     {
       "id": 22,
-      "value": "Enova",
-      "display": "Enova Energy"
+      "value": "Ergon",
+      "display": "Ergon Energy",
+      "image": "/CompanyLogos/ErgonEnergy.png"
     },
     {
       "id": 23,
-      "value": "Ergon",
-      "display": "Ergon Energy"
+      "value": "FutureXPower",
+      "display": "Future X Power",
+      "image": "/CompanyLogos/FutureXPower.png"
     },
     {
       "id": 24,
-      "value": "FutureXPower",
-      "display": "Future X Power"
+      "value": "Gee",
+      "display": "Gee Energy",
+      "image": "/CompanyLogos/GeeEnergy.png"
     },
     {
       "id": 25,
-      "value": "Gee",
-      "display": "Gee Energy"
+      "value": "GloBird",
+      "display": "Glo Bird",
+      "image": "/CompanyLogos/GloBirdEnergy.png"
     },
     {
       "id": 26,
-      "value": "GloBird",
-      "display": "Glo Bird"
+      "value": "GlowPower",
+      "display": "Glow Power",
+      "image": "/CompanyLogos/GlowPower.png"
     },
     {
       "id": 27,
-      "value": "GlowPower",
-      "display": "Glow Power"
+      "value": "IndigoPower",
+      "display": "Indigo Power",
+      "image": "/CompanyLogos/IndigoPower.png"
     },
     {
       "id": 28,
-      "value": "HorizonPower",
-      "display": "Horizon Power"
+      "value": "iO",
+      "display": "iO Energy",
+      "image": "/CompanyLogos/IoEnergy.png"
     },
     {
       "id": 29,
-      "value": "IndigoPower",
-      "display": "Indigo Power"
+      "value": "Jacana",
+      "display": "Jacana Energy",
+      "image": "/CompanyLogos/JacanaEnergy.png"
     },
     {
       "id": 30,
-      "value": "iO",
-      "display": "iO Energy"
+      "value": "Kleenheat",
+      "display": "Kleenheat",
+      "image": "/CompanyLogos/Kleenheat.png"
     },
     {
       "id": 31,
-      "value": "Jacana",
-      "display": "Jacana Energy"
+      "value": "Kogan",
+      "display": "Kogan Energy",
+      "image": "/CompanyLogos/KoganEnergy.png"
     },
     {
       "id": 32,
-      "value": "Kleenheat",
-      "display": "Kleenheat"
+      "value": "LPE",
+      "display": "LPE",
+      "image": "/CompanyLogos/Lpe.png"
     },
     {
       "id": 33,
-      "value": "Kogan",
-      "display": "Kogan Energy"
+      "value": "Lumo",
+      "display": "Lumo Energy",
+      "image": "/CompanyLogos/LumoEnergy.png"
     },
     {
       "id": 34,
-      "value": "LPE",
-      "display": "LPE"
+      "value": "Mojo",
+      "display": "Mojo Power",
+      "image": "/CompanyLogos/Mojo.png"
     },
     {
       "id": 35,
-      "value": "Lumo",
-      "display": "Lumo Energy"
+      "value": "Momentum",
+      "display": "Momentum Energy",
+      "image": "/CompanyLogos/Momentum.png"
     },
     {
       "id": 36,
-      "value": "Mojo",
-      "display": "Mojo Power"
+      "value": "Nectr",
+      "display": "Nectr",
+      "image": "/CompanyLogos/Nectr.png"
     },
     {
       "id": 37,
-      "value": "Momentum",
-      "display": "Momentum Energy"
+      "value": "Next",
+      "display": "Next Business Energy",
+      "image": "/CompanyLogos/NextBusinessEnergy.png"
     },
     {
       "id": 38,
-      "value": "Nectr",
-      "display": "Nectr"
+      "value": "On",
+      "display": "On by Energy Australia",
+      "image": "/CompanyLogos/OnByEnergyAustralia.png"
     },
     {
       "id": 39,
-      "value": "Next",
-      "display": "Next Business Energy"
+      "value": "Origin",
+      "display": "Origin Energy",
+      "image": "/CompanyLogos/Origin.png"
     },
     {
       "id": 40,
-      "value": "On",
-      "display": "On by Energy Australia"
+      "value": "Ovo",
+      "display": "Ovo Energy",
+      "image": "/CompanyLogos/OvoEnergy.png"
     },
     {
       "id": 41,
-      "value": "Origin",
-      "display": "Origin Energy"
+      "value": "Powerclub",
+      "display": "Powerclub",
+      "image": "/CompanyLogos/PowerClub.png"
     },
     {
       "id": 42,
-      "value": "Ovo",
-      "display": "Ovo Energy"
+      "value": "Powerdirect",
+      "display": "Powerdirect",
+      "image": "/CompanyLogos/Powerdirect.png"
     },
     {
       "id": 43,
-      "value": "Powerclub",
-      "display": "Powerclub"
+      "value": "Powershop",
+      "display": "Powershop",
+      "image": "/CompanyLogos/Powershop.png"
     },
     {
       "id": 44,
-      "value": "Powerdirect",
-      "display": "Powerdirect"
+      "value": "Q",
+      "display": "Q Energy",
+      "image": "/CompanyLogos/QEnergy.png"
     },
     {
       "id": 45,
-      "value": "Powershop",
-      "display": "Powershop"
+      "value": "Radian",
+      "display": "Radian Energy",
+      "image": "/CompanyLogos/RadianEnergy.png"
     },
     {
       "id": 46,
-      "value": "Q",
-      "display": "Q Energy"
+      "value": "ReAmped",
+      "display": "ReAmped Energy",
+      "image": "/CompanyLogos/ReampedEnergy.png"
     },
     {
       "id": 47,
-      "value": "Radian",
-      "display": "Radian Energy"
+      "value": "Red",
+      "display": "Red Energy",
+      "image": "/CompanyLogos/Red.png"
     },
     {
       "id": 48,
-      "value": "ReAmped",
-      "display": "ReAmped Energy"
+      "value": "Rimfire",
+      "display": "Rimfire Energy",
+      "image": "/CompanyLogos/RimfireEnergy.png"
     },
     {
       "id": 49,
-      "value": "Red",
-      "display": "Red Energy"
+      "value": "Simply",
+      "display": "Simply Energy",
+      "image": "/CompanyLogos/SimplyEnergy.png"
     },
     {
       "id": 50,
-      "value": "Rimfire",
-      "display": "Rimfire Energy"
+      "value": "Smart",
+      "display": "Smart Energy",
+      "image": "/CompanyLogos/SmartEnergy.png"
     },
     {
       "id": 51,
-      "value": "Simply",
-      "display": "Simply Energy"
+      "value": "Social",
+      "display": "Social Energy",
+      "image": "/CompanyLogos/SocialEnergy.png"
     },
     {
       "id": 52,
-      "value": "Smart",
-      "display": "Smart Energy"
+      "value": "Sonnen",
+      "display": "Sonnen",
+      "image": "/CompanyLogos/Sonnen.png"
     },
     {
       "id": 53,
-      "value": "Social",
-      "display": "Social Energy"
+      "value": "Sumo",
+      "display": "Sumo",
+      "image": "/CompanyLogos/Sumo.png"
     },
     {
       "id": 54,
-      "value": "Sonnen",
-      "display": "Sonnen"
+      "value": "Tango",
+      "display": "Tango Energy",
+      "image": "/CompanyLogos/Tango.png"
     },
     {
       "id": 55,
-      "value": "Sumo",
-      "display": "Sumo"
+      "value": "Telstra",
+      "display": "Telstra Energy",
+      "image": "/CompanyLogos/TelstraEnergy.png"
     },
     {
       "id": 56,
-      "value": "Synergy",
-      "display": "Synergy"
-    },
-    {
-      "id": 57,
-      "value": "Tango",
-      "display": "Tango Energy"
-    },
-    {
-      "id": 58,
-      "value": "Telstra",
-      "display": "Telstra Energy"
-    },
-    {
-      "id": 59,
       "value": "Zen",
-      "display": "Zen Power"
+      "display": "Zen Power",
+      "image": "/CompanyLogos/ZenEnergy.png"
     }
   ]
 }
