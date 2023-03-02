@@ -22,6 +22,7 @@ export default function ToolTips() {
       <Button
         color="blue.500"
         textDecoration="underline"
+        size={{ base: 'md', md: 'lg', lg: 'lg' }}
         bg="gray.100"
         onClick={onOpen}
         shadow="lg"
@@ -45,9 +46,9 @@ export default function ToolTips() {
                 Pricing
               </Heading>
               <Text>
-                All pricing is based on a home using 4000kwh a year, which is
-                roughly 11kwh a day. The price of the plan is displayed as a
-                yearly cost.
+                The price of the plan is displayed as a yearly cost. Its a
+                caluclation of using 4000kWh a year using the per kWh and daily
+                supply charges.
               </Text>
               <br />
               <Text>

@@ -54,7 +54,7 @@ export default function Home() {
             <GridItem
               gridRow={{ base: '1', md: '1' }}
               gridColumn={{ base: '1', md: '1 / 3' }}
-              mx={{ base: '10%', md: '5%' }}
+              mx={{ base: '7.5%', md: '5%' }}
             >
               <Hero />
             </GridItem>

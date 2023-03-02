@@ -19,10 +19,10 @@ import { GiAustralia } from 'react-icons/gi';
 import { BiWorld } from 'react-icons/bi';
 // import { QuestionOutlineIcon } from '@chakra-ui/icons';
 
-import jsonData from '../data/companyHeroData.json';
-import { db } from '../firebase/config';
-import { ratesFormat, RenderIf } from '../utils/utils';
-import PostcodeSearch from './PostcodeSearch';
+import jsonData from '../../data/companyHeroData.json';
+import { db } from '../../firebase/config';
+import { ratesFormat, RenderIf } from '../../utils/utils';
+import PostcodeSearch from '../PostcodeSearch';
 import SignUpModal from './SignUpModal';
 import ToolTips from './ToolTips';
 
@@ -114,13 +114,13 @@ function EmissionsTotal(ele) {
   const total = parseFloat(ele.ele / 1.62).toFixed(2);
   if (total < 1 && total > -1) {
     return (
-      <Heading as="h2" fontSize={{ base: 'lg', md: '2xl' }} py="15px" px="30px">
+      <Heading as="h2" fontSize={{ base: 'lg', md: '3xl' }} py="15px" px="30px">
         {`${prefix} ${total * 100}% of a car`}
       </Heading>
     );
   }
   return (
-    <Heading as="h2" fontSize={{ base: 'lg', md: '2xl' }} py="15px" px="30px">
+    <Heading as="h2" fontSize={{ base: 'lg', md: '3xl' }} py="15px" px="30px">
       {`${prefix} ${total * -1} cars`}
     </Heading>
   );
@@ -197,6 +197,13 @@ export default function BestPlans({ postcode, company }) {
         const filterObj = jsonData.companies.filter(
           (item) => item.name === ele.data.brandName
         );
+
+        const rates =
+          ele.data?.electricityContract?.tariffPeriod[0]?.singleRate?.rates;
+        console.log('rates', rates);
+
+        const greenPower = ele.greenPowerCalculated;
+        console.log('greenPower', greenPower);
 
         return (
           <Grid key={ele.id}>
@@ -359,19 +366,20 @@ export default function BestPlans({ postcode, company }) {
                 <GridItem>
                   <EmissionsTotal ele={ele.tonnesMwh} />
                 </GridItem>
+                {/* Tonnes of CO2 */}
                 <GridItem
                   px="30px"
                   pb="5px"
                   fontWeight="semibold"
                   maxH="15px"
                 >{`Tonnes of CO2: ${ele.tonnesMwh}`}</GridItem>
-                <GridItem
+                {/* <GridItem
                   px="30px"
                   pb="5px"
                   fontWeight="semibold"
                 >{`Comapny Green Rating: ${(
                   Math.round(ele.greenRating * 2) / 2
-                ).toFixed(1)}`}</GridItem>
+                ).toFixed(1)}`}</GridItem> */}
               </Grid>
               <GridItem
                 gridRow={{ base: '6', md: '4' }}
@@ -389,10 +397,28 @@ export default function BestPlans({ postcode, company }) {
                   />
                 </Flex>
               </GridItem>
-
-              {/* <GridItem>
-              {`${ele.greenPowerCalculated[0]}`}
-            </GridItem> */}
+              <RenderIf value={rates?.length}>
+                {rates?.map((rate, idx) => (
+                  <>
+                    <GridItem gridRow={{ base: '6', md: '6' }}>{`Volume ${
+                      idx + 1
+                    }: ${rate.volume ?? 'No cap'}`}</GridItem>
+                    <GridItem
+                      gridRow={{ base: '6', md: '6' }}
+                    >{`Price per kWh ${idx + 1}: ${rate.unitPrice}`}</GridItem>
+                  </>
+                ))}
+              </RenderIf>
+              {/* <RenderIf value={greenPower?.length}>
+                {greenPower?.map((obj, idx) => (
+                  obj.price = greenPower[idx]
+                ))} */}
+              {/* {greenPower?.map((rate, idx) => (
+                  <GridItem gridRow={{ base: '7', md: '7' }}>{`${
+                    idx + 1
+                  }: ${rate}`}</GridItem>
+                ))} */}
+              {/* </RenderIf> */}
               <Grid
                 gridRow={{ base: '7', md: '4' }}
                 gridColumnStart={{ base: '1', md: '1' }}
@@ -422,15 +448,16 @@ export default function BestPlans({ postcode, company }) {
     }
     if (emptyState) {
       return (
-        <Heading as="h3" fontSize="md" fontWeight="semibold" mt="45px">
-          Here it goes the empty state
-        </Heading>
+        <Flex justifyContent="center">
+          <Heading as="h3" fontSize="lg" fontWeight="semibold" mt="45px">
+            Enter your postcode and current provider to find the best plans
+          </Heading>
+        </Flex>
       );
     }
     return (
       <Heading as="h3" fontSize="md" fontWeight="semibold" mt="45px">
-        Hello, either you need to enter your criteria above or there are no
-        plans available for your search
+        Unfortunately there aren't any plans that match your crieria
       </Heading>
     );
   };
@@ -460,21 +487,29 @@ export default function BestPlans({ postcode, company }) {
     setBestPlans(best);
     setTimeout(setLoading(false), 5000);
   };
+
   return (
     <Grid>
       <Grid
         gridTemplateColumns={{ md: '1fr 1fr' }}
         mb={{ base: '10px', md: '30px', lg: '40px' }}
       >
-        <GridItem minW="min-content" pl={{ base: '5', md: '50px' }} mx="0">
+        <GridItem
+          gridRow={{ base: '1', md: '1' }}
+          minW="min-content"
+          pl={{ base: '5', md: '0px' }}
+          mx="0"
+          ml={{ base: '0px', lg: '10%' }}
+        >
           <PostcodeSearch postCode={postcode} company={company} />
         </GridItem>
         <GridItem
-          gridRow="1"
+          gridRow={{ base: '2', md: '1' }}
           gridColumn={{ base: '1', md: '2' }}
-          placeSelf="center"
-          ml={{ base: '25px', md: '50px' }}
-          mt={{ base: '20px', md: '30px' }}
+          justifySelf="start"
+          alignSelf="center"
+          ml={{ base: '25px', md: '5px' }}
+          mt={{ base: '50px', md: '30px' }}
           mr={{ md: '15%', lg: '10%' }}
         >
           <ToolTips />
